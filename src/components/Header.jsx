@@ -15,12 +15,12 @@ export default function Header() {
         </a>
 
         {/* Desktop meni */}
-        <nav className="hidden md:flex space-x-8 text-zinc-200">
+        {/* <nav className="hidden md:flex space-x-8 text-zinc-200">
           <a href="#about" className="hover:text-emerald-400 transition">O nama</a>
           <a href="#gallery" className="hover:text-emerald-400 transition">Galerija</a>
           <a href="#pricing" className="hover:text-emerald-400 transition">Treninzi</a>
-          <a href="#contact" className="hover:text-emerald-400 transition">Kontakt</a>
-        </nav>
+          <a href="#contact" className=pricing"hover:text-emerald-400 transition">Kontakt</a>
+        </nav> */}
 
         {/* Mobile dugme */}
         <button
@@ -57,7 +57,7 @@ export default function Header() {
           </div>
 
           {/* Linkovi */}
-          <nav className="flex flex-col items-center justify-center space-y-8 text-2xl font-semibold flex-grow">
+          {/* <nav className="flex flex-col items-center justify-center space-y-8 text-2xl font-semibold flex-grow">
             <a href="#hero" onClick={() => setIsOpen(false)} className="hover:text-emerald-200">
               Početna
             </a>
@@ -73,7 +73,7 @@ export default function Header() {
             <a href="#contact" onClick={() => setIsOpen(false)} className="hover:text-emerald-200">
               Kontakt
             </a>
-          </nav>
+          </nav> */}
 
           {/* Footer */}
           <div className="text-center border-t border-emerald-400 py-4 text-sm text-emerald-50/90">
