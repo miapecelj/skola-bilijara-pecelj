@@ -33,8 +33,9 @@ export default function App() {
         <section id="hero" data-aos="fade-up" data-aos-duration="200">
           <HeroSection />
         </section>
+        <h1>Under construction. Coming soon...</h1>
 
-        <section id="about" data-aos="fade-up" data-aos-duration="200">
+        {/* <section id="about" data-aos="fade-up" data-aos-duration="200">
           <AboutSection />
         </section>
 
@@ -48,7 +49,7 @@ export default function App() {
 
         <section id="contact" data-aos="fade-up" data-aos-duration="200">
           <ContactSection />
-        </section>
+        </section> */}
       </main>
     </div>
   );
