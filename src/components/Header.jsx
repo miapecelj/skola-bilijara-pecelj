@@ -5,7 +5,7 @@ const navLinks = [
   { href: "#hero", label: "Početna" },
   { href: "#about", label: "O nama" },
   { href: "#polaznici", label: "Polaznici" },
-  { href: "#pricing", label: "Treninzi" },
+  { href: "#treninzi", label: "Treninzi" },
   { href: "#contact", label: "Kontakt" },
 ];
 

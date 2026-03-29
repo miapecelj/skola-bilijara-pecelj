@@ -255,7 +255,7 @@ export default function StudentsSection() {
 
           {/* Video testimonials */}
           {videos.length > 0 && (
-            <div className="mt-16">
+            <div id="treninzi" className="mt-16">
               <h3 className="text-xl font-bold text-green-400 mb-6 flex items-center gap-2">
                 <span className="block w-1 h-5 bg-green-500 rounded-full" />
                 Snimci sa treninga
