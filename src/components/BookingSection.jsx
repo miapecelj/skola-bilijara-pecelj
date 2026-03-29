@@ -168,7 +168,7 @@ export default function BookingSection() {
               {/* Date & Time picker */}
               <div className="mb-4">
                 <label className="block text-zinc-300 text-sm mb-1.5">
-                  Željeni datum i sat <span className="text-red-400">*</span>
+                  Željeni datum i sat 
                 </label>
                 <DatePicker
                   selected={termin}

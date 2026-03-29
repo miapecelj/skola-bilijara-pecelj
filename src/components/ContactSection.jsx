@@ -6,7 +6,7 @@ export default function ContactSection() {
             <p className="max-w-2xl mx-auto text-zinc-400 mb-10 px-4">
                 Škola bilijara Pecelj stacionirana je u <span className="text-white">Beogradu</span>,
                 ali postoji mogućnost organizacije treninga i radionica i van Beograda.
-                Za sve informacije i dogovore, slobodno nas kontaktirajte direktno.
+                Za sve informacije o treninzima, cenama i dogovore, slobodno nas kontaktirajte direktno.
             </p>
 
             <div className="space-y-3 text-zinc-300 mb-8">
