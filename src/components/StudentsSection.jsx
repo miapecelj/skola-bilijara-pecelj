@@ -75,7 +75,7 @@ const polaznici = [
   },
   {
     id: "aleksandar",
-    name: "Aleksandar V.",
+    name: "Aleksandar",
     review:
       "Saradnja sa Pecelj Đorđem je nešto što mi je omogućilo fundamentalno znanje u bilijaru i, još važnije, postalo je podloga za svaki moj dalji razvoj i napredak u igri. Prostim rečima rečeno, uz njegove instrukcije i usmeravanje savladao sam \u201ebilijarsku azbuku\u201c bez koje napredak u igri i samoj bilijarskoj logici jednostavno nije mogu\u0107.",
   },
@@ -86,9 +86,8 @@ const polaznici = [
       "Saradnja sa njim ima posebno mesto jer sam upravo tu napravio svoje prve ozbiljne poteze u bilijaru. Pravi pristup, strpljenje i dobra energija od samog početka.",
   },
   {
-    id: "milijan",
-    file: "miljan",
-    name: "Milijan",
+    id: "miljan",
+    name: "Miljan",
     review:
       "Zahvaljujući Đorđu uspeo sam da svoju igru podignem na jedan viši nivo. Znanje koje poseduje uspeva da prenese veoma lako na učenika, tako da dajem sve preporuke za rad sa njim.",
   },
@@ -106,13 +105,12 @@ const polaznici = [
   },
   {
     id: "aca",
-    name: "Aca Simović",
+    name: "Aca",
     review:
       "Profesionalna instruktaža prilagođena trenutnom nivou polaznika. Višegodišnje iskustvo se vidi već na prvom času, pogotovo za starije polaznike koji imaju dosta toga da koriguju u fundamentima igre. Za svaku preporuku!",
   },
   {
     id: "novak",
-    file: "Novak foto",
     name: "Novak",
     review:
       "U Đorđu se spajaju dve osobine koje se vrlo retko sreću na jednom mestu: velika strast za igrom i izražene pedagoške sposobnosti. Te dve stvari omogućuju svim polaznicima ove škole da vrlo brzo usvoje znanje koje im on prenosi. Zato budite sigurni da će i vaša tehnika i vaša igra napredovati od prvog časa koji budete imali s njim.",
@@ -141,16 +139,16 @@ const videos = [
 ];
 
 /* ── Avatar fallback ──────────────────────────────────────── */
-function Avatar({ file, id, name }) {
+function Avatar({ id, name }) {
   const initial = name.charAt(0).toUpperCase();
-  const base = file ?? id;
+  const base = id;
   const src = ["jpg", "jpeg", "png", "webp"]
     .map((ext) => imageModules[`../images/${base}.${ext}`]?.default)
     .find(Boolean);
 
   if (!src) {
     return (
-      <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-4xl font-bold text-emerald-400 select-none">
+      <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-4xl font-bold text-green-400 select-none">
         {initial}
       </div>
     );
@@ -164,7 +162,7 @@ function StudentCard({ student, onClick }) {
   return (
     <button
       onClick={() => onClick(student)}
-      className="group relative w-full aspect-square rounded-2xl overflow-hidden border border-zinc-800 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-1 focus:outline-none"
+      className="group relative w-full aspect-square rounded-2xl overflow-hidden border border-zinc-800 hover:border-green-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-green-900/30 hover:-translate-y-1 focus:outline-none"
       aria-label={`Pročitaj utisak — ${student.name}`}
     >
       {/* Photo / Avatar */}
@@ -179,7 +177,7 @@ function StudentCard({ student, onClick }) {
       </div>
 
       {/* Click hint badge */}
-      <div className="absolute top-2 right-2 flex items-center gap-1 bg-emerald-500 text-black text-[10px] font-bold px-2 py-1 rounded-full opacity-80 group-hover:opacity-100 transition-opacity">
+      <div className="absolute top-2 right-2 flex items-center gap-1 bg-green-500 text-black text-[10px] font-bold px-2 py-1 rounded-full opacity-80 group-hover:opacity-100 transition-opacity">
         <MessageSquare size={10} />
         <span>Utisak</span>
       </div>
@@ -204,12 +202,12 @@ function TestimonialModal({ student, onClose }) {
       >
         {/* Header */}
         <div className="flex items-center gap-4 px-6 py-5 border-b border-zinc-800">
-          <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0">
+          <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gren-500 shrink-0">
             <Avatar file={student.file} id={student.id} name={student.name} />
           </div>
           <div>
             <p className="text-zinc-100 font-bold text-lg">{student.name}</p>
-            <p className="text-emerald-400 text-xs font-medium">Polaznik škole</p>
+            <p className="text-green-400 text-xs font-medium">Polaznik škole</p>
           </div>
           <button
             onClick={onClose}
@@ -241,7 +239,7 @@ export default function StudentsSection() {
       <section id="polaznici" className="bg-zinc-950 py-20 px-4 border-t border-zinc-800">
         <div className="max-w-5xl mx-auto">
 
-          <h2 className="text-3xl md:text-4xl font-bold text-emerald-400 text-center mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-green-500 text-center mb-3">
             Polaznici
           </h2>
           <p className="text-zinc-400 text-center text-sm mb-10">
@@ -258,8 +256,8 @@ export default function StudentsSection() {
           {/* Video testimonials */}
           {videos.length > 0 && (
             <div className="mt-16">
-              <h3 className="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2">
-                <span className="block w-1 h-5 bg-emerald-500 rounded-full" />
+              <h3 className="text-xl font-bold text-green-400 mb-6 flex items-center gap-2">
+                <span className="block w-1 h-5 bg-green-500 rounded-full" />
                 Snimci sa treninga
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

@@ -56,7 +56,7 @@ export default function Header() {
           <div>
             <a
               href="#booking"
-              className="md:hidden px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
+              className="md:hidden px-4 py-2 rounded-lg bg-green-500 hover:bg-green-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
             >
               Zakažite čas
             </a>
@@ -70,10 +70,10 @@ export default function Header() {
                 href={href}
                 onClick={() => setActive(href)}
                 className={`relative text-sm font-medium tracking-wide py-1 whitespace-nowrap transition-colors duration-200
-                  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-emerald-400 after:rounded-full after:transition-all after:duration-300
+                  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-green-400 after:rounded-full after:transition-all after:duration-300
                   ${active === href
-                    ? "text-emerald-400 after:w-full"
-                    : "text-zinc-300 hover:text-emerald-400 after:w-0 hover:after:w-full"
+                    ? "text-green-400 after:w-full"
+                    : "text-zinc-300 hover:text-green-400 after:w-0 hover:after:w-full"
                   }`}
               >
                 {label}
@@ -85,14 +85,14 @@ export default function Header() {
           <div className="flex items-center justify-end gap-3">
             <a
               href="#booking"
-              className="hidden md:inline-flex px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
+              className="hidden md:inline-flex px-4 py-2 rounded-lg bg-green-500 hover:bg-green-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
             >
               Zakažite čas
             </a>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-zinc-300 hover:text-emerald-400 hover:bg-zinc-800/60 transition-all duration-200"
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-zinc-300 hover:text-green-400 hover:bg-zinc-800/60 transition-all duration-200"
               aria-label={isOpen ? "Zatvori meni" : "Otvori meni"}
             >
               {isOpen ? <X size={22} /> : <Menu size={22} />}
@@ -137,7 +137,7 @@ export default function Header() {
                 onClick={() => { setIsOpen(false); setActive(href); }}
                 className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border
                   ${active === href
-                    ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/25"
+                    ? "bg-green-500/15 text-green-400 border-green-500/25"
                     : "text-zinc-300 hover:bg-zinc-800/60 hover:text-zinc-100 border-transparent"
                   }`}
                 style={{ transitionDelay: isOpen ? `${i * 35}ms` : "0ms" }}
@@ -149,7 +149,7 @@ export default function Header() {
             <a
               href="#booking"
               onClick={() => setIsOpen(false)}
-              className="mt-3 px-4 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors text-center"
+              className="mt-3 px-4 py-3 rounded-xl bg-green-500 hover:bg-green-400 text-black font-semibold text-sm transition-colors text-center"
             >
               Zakažite čas
             </a>

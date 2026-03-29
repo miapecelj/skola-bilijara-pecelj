@@ -1,7 +1,7 @@
 export default function ContactSection() {
     return (
         <section id="contact" className="py-20 bg-zinc-900 border-t border-zinc-800 text-center">
-            <h2 className="text-4xl font-bold text-emerald-400 mb-6">Kontakt</h2>
+            <h2 className="text-4xl font-bold text-green-400 mb-6">Kontakt</h2>
 
             <p className="max-w-2xl mx-auto text-zinc-400 mb-10 px-4">
                 Škola bilijara Pecelj stacionirana je u <span className="text-white">Beogradu</span>,
@@ -14,7 +14,7 @@ export default function ContactSection() {
                     📧{" "}
                     <a
                         href="mailto:kontakt@skola-bilijara-pecelj.rs"
-                        className="text-emerald-400 hover:text-emerald-300 transition"
+                        className="text-green-400 hover:text-green-300 transition"
                     >
                         skolabilijarapecelj@gmail.com
                     </a>

@@ -90,7 +90,7 @@ export default function BookingSection() {
   };
 
   const inputClass = (hasError) =>
-    `w-full bg-zinc-800 border ${hasError ? "border-red-500" : "border-zinc-700"} rounded-lg px-4 py-3 text-zinc-100 text-sm placeholder-zinc-500 focus:outline-none focus:border-emerald-500 transition-colors`;
+    `w-full bg-zinc-800 border ${hasError ? "border-red-500" : "border-zinc-700"} rounded-lg px-4 py-3 text-zinc-100 text-sm placeholder-zinc-500 focus:outline-none focus:border-green-500 transition-colors`;
 
   const now = new Date();
 
@@ -98,19 +98,19 @@ export default function BookingSection() {
     <section id="booking" className="bg-zinc-900 py-20 px-4">
       <div className="max-w-2xl mx-auto">
 
-        <h2 className="text-3xl md:text-4xl font-bold text-emerald-400 text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-green-500 text-center mb-10">
           Zakažite Čas
         </h2>
 
         <div className="bg-zinc-900/80 rounded-2xl border border-zinc-800 p-6 md:p-8">
           {status === "success" ? (
             <div className="flex flex-col items-center gap-4 py-16 text-center">
-              <CheckCircle size={56} className="text-emerald-400" />
+              <CheckCircle size={56} className="text-green-400" />
               <p className="text-zinc-100 font-semibold text-xl">Zahtev je poslat!</p>
               <p className="text-zinc-400">Kontaktiraćemo vas u najkraćem mogućem roku.</p>
               <button
                 onClick={() => setStatus("idle")}
-                className="mt-4 px-6 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors"
+                className="mt-4 px-6 py-2.5 rounded-lg bg-green-500 hover:bg-green-400 text-black font-semibold text-sm transition-colors"
               >
                 Pošaljite novi zahtev
               </button>
@@ -241,7 +241,7 @@ export default function BookingSection() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 disabled:opacity-60 disabled:cursor-not-allowed text-black font-bold text-sm tracking-wide transition-colors"
+                className="w-full py-3.5 rounded-lg bg-green-500 hover:bg-green-500 disabled:opacity-60 disabled:cursor-not-allowed text-black font-bold text-sm tracking-wide transition-colors"
               >
                 {status === "sending" ? "Slanje..." : "Pošaljite Zahtev"}
               </button>
@@ -263,7 +263,7 @@ export default function BookingSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex items-center justify-center w-11 h-11 rounded-full bg-zinc-800 text-zinc-300 hover:bg-emerald-500/20 hover:text-emerald-400 transition-all"
+                  className="flex items-center justify-center w-11 h-11 rounded-full bg-zinc-800 text-zinc-300 hover:bg-green-500/20 hover:text-green-400 transition-all"
                 >
                   {icon}
                 </a>
