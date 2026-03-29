@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#contact", label: "Kontakt" },
 ];
 
-export default function Header({ onOpenBooking }) {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("#hero");
@@ -52,7 +52,7 @@ export default function Header({ onOpenBooking }) {
       >
         <div className="h-16 px-4 sm:px-6 flex items-center justify-between md:grid md:grid-cols-3 md:max-w-7xl md:mx-auto">
 
-          {/* LEFT — empty on mobile (hidden), spacer on desktop */}
+          {/* LEFT — spacer (desktop) */}
           <div className="hidden md:block" />
 
           {/* CENTER — desktop nav */}
@@ -76,15 +76,13 @@ export default function Header({ onOpenBooking }) {
 
           {/* RIGHT — CTA + hamburger */}
           <div className="flex items-center justify-end gap-3">
-            {/* CTA button — visible on both mobile and desktop */}
-            <button
-              onClick={onOpenBooking}
+            <a
+              href="#booking"
               className="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
             >
               Zakažite čas
-            </button>
+            </a>
 
-            {/* Hamburger — mobile only */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-zinc-300 hover:text-emerald-400 hover:bg-zinc-800/60 transition-all duration-200"
@@ -113,7 +111,6 @@ export default function Header({ onOpenBooking }) {
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* Drawer header */}
           <div className="flex items-center justify-between px-5 h-16 border-b border-zinc-800">
             <span className="text-zinc-200 font-semibold text-sm tracking-wide">Meni</span>
             <button
@@ -125,7 +122,6 @@ export default function Header({ onOpenBooking }) {
             </button>
           </div>
 
-          {/* Links */}
           <nav className="flex flex-col px-3 py-4 gap-1 flex-grow">
             {navLinks.map(({ href, label }, i) => (
               <a
@@ -143,13 +139,13 @@ export default function Header({ onOpenBooking }) {
               </a>
             ))}
 
-            {/* CTA in drawer */}
-            <button
-              onClick={() => { setIsOpen(false); onOpenBooking(); }}
-              className="mt-3 mx-0 px-4 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors text-left"
+            <a
+              href="#booking"
+              onClick={() => setIsOpen(false)}
+              className="mt-3 px-4 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors text-center"
             >
               Zakažite čas
-            </button>
+            </a>
           </nav>
 
           <div className="px-5 py-4 border-t border-zinc-800">

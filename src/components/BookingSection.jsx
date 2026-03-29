@@ -1,0 +1,234 @@
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+import { Instagram, Facebook, CheckCircle, AlertCircle } from "lucide-react";
+
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+function TikTokIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
+    </svg>
+  );
+}
+
+const nivoOptions = [
+  { value: "", label: "Izaberi nivo..." },
+  { value: "Početnik", label: "Početnik" },
+  { value: "Srednji nivo", label: "Srednji nivo" },
+  { value: "Napredni", label: "Napredni" },
+];
+
+const lokacijaOptions = [
+  { value: "", label: "Izaberi lokaciju..." },
+  { value: "Beograd", label: "Beograd" },
+  { value: "Novi Sad", label: "Novi Sad" },
+  { value: "Online", label: "Online" },
+];
+
+const initialForm = {
+  ime: "",
+  kontakt: "",
+  nivo: "",
+  lokacija: "",
+  termin: "",
+  poruka: "",
+};
+
+export default function BookingSection() {
+  const [form, setForm]     = useState(initialForm);
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+
+  const handleChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          to_email:  "skolabilijarapecelj@gmail.com",
+          from_name: form.ime,
+          kontakt:   form.kontakt,
+          nivo:      form.nivo,
+          lokacija:  form.lokacija,
+          termin:    form.termin,
+          poruka:    form.poruka,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus("success");
+      setForm(initialForm);
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const inputClass =
+    "w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-zinc-100 text-sm placeholder-zinc-500 focus:outline-none focus:border-emerald-500 transition-colors";
+
+  return (
+    <section id="booking" className="bg-zinc-900 py-20 px-4">
+      <div className="max-w-2xl mx-auto">
+
+        <h2 className="text-3xl md:text-4xl font-bold text-emerald-400 text-center mb-10">
+          Zakažite Čas
+        </h2>
+
+        <div className="bg-zinc-900/80 rounded-2xl border border-zinc-800 p-6 md:p-8">
+          {status === "success" ? (
+            <div className="flex flex-col items-center gap-4 py-16 text-center">
+              <CheckCircle size={56} className="text-emerald-400" />
+              <p className="text-zinc-100 font-semibold text-xl">Zahtev je poslat!</p>
+              <p className="text-zinc-400">Kontaktiraćemo vas u najkraćem mogućem roku.</p>
+              <button
+                onClick={() => setStatus("idle")}
+                className="mt-4 px-6 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors"
+              >
+                Pošaljite novi zahtev
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} noValidate>
+              {/* Row 1 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label className="block text-zinc-300 text-sm mb-1.5">Ime i prezime</label>
+                  <input
+                    type="text"
+                    name="ime"
+                    value={form.ime}
+                    onChange={handleChange}
+                    required
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className="block text-zinc-300 text-sm mb-1.5">Email ili telefon</label>
+                  <input
+                    type="text"
+                    name="kontakt"
+                    value={form.kontakt}
+                    onChange={handleChange}
+                    required
+                    className={inputClass}
+                  />
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label className="block text-zinc-300 text-sm mb-1.5">Nivo znanja</label>
+                  <div className="relative">
+                    <select
+                      name="nivo"
+                      value={form.nivo}
+                      onChange={handleChange}
+                      className={inputClass + " appearance-none pr-8"}
+                    >
+                      {nivoOptions.map((o) => (
+                        <option key={o.value} value={o.value}>{o.label}</option>
+                      ))}
+                    </select>
+                    <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 text-xs">▾</span>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-zinc-300 text-sm mb-1.5">Lokacija</label>
+                  <div className="relative">
+                    <select
+                      name="lokacija"
+                      value={form.lokacija}
+                      onChange={handleChange}
+                      className={inputClass + " appearance-none pr-8"}
+                    >
+                      {lokacijaOptions.map((o) => (
+                        <option key={o.value} value={o.value}>{o.label}</option>
+                      ))}
+                    </select>
+                    <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 text-xs">▾</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Termin */}
+              <div className="mb-4">
+                <label className="block text-zinc-300 text-sm mb-1.5">
+                  Poželjan termin <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="termin"
+                  value={form.termin}
+                  onChange={handleChange}
+                  required
+                  placeholder="e.g., Weekday evenings / Vikend popodne"
+                  className={inputClass}
+                />
+              </div>
+
+              {/* Poruka */}
+              <div className="mb-6">
+                <label className="block text-zinc-300 text-sm mb-1.5">Dodatna poruka (opciono)</label>
+                <textarea
+                  name="poruka"
+                  value={form.poruka}
+                  onChange={handleChange}
+                  rows={4}
+                  className={inputClass + " resize-y"}
+                />
+              </div>
+
+              {/* Error */}
+              {status === "error" && (
+                <div className="flex items-center gap-2 text-red-400 text-sm mb-4">
+                  <AlertCircle size={16} />
+                  <span>Greška pri slanju. Pokušajte ponovo ili nas kontaktirajte direktno.</span>
+                </div>
+              )}
+
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="w-full py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 disabled:opacity-60 disabled:cursor-not-allowed text-black font-bold text-sm tracking-wide transition-colors"
+              >
+                {status === "sending" ? "Slanje..." : "Pošaljite Zahtev"}
+              </button>
+            </form>
+          )}
+
+          {/* Social */}
+          <div className="mt-8 pt-6 border-t border-zinc-800">
+            <p className="text-zinc-300 text-sm font-medium text-center mb-4">Pratite nas</p>
+            <div className="flex items-center justify-center gap-4">
+              {[
+                { href: "https://instagram.com", icon: <Instagram size={20} />, label: "Instagram" },
+                { href: "https://facebook.com",  icon: <Facebook size={20} />,  label: "Facebook"  },
+                { href: "https://tiktok.com",    icon: <TikTokIcon size={20} />, label: "TikTok"   },
+              ].map(({ href, icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex items-center justify-center w-11 h-11 rounded-full bg-zinc-800 text-zinc-300 hover:bg-emerald-500/20 hover:text-emerald-400 transition-all"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
