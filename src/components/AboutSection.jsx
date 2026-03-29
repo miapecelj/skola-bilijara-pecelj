@@ -110,23 +110,25 @@ export default function AboutSection() {
                             kombinacija iskustva, strasti, savremenog pristupa i razumevanja ovog sporta iz
                             različitih perspektiva čini osnov rada škole i odvaja je od drugih.
                         </p>
-                        <div className="px-6 pb-6 space-y-6"></div>
 
-                        <div className="relative h-120 w-full">
-                            <div id="sons" className="flex flex-col md:flex-row gap-4 h-full">
+                        <div className="mt-6 flex flex-col sm:flex-row gap-4">
+                            <div className="relative flex-1 h-72 rounded-xl overflow-hidden">
                                 <img
                                     src={aleksaImg1}
                                     alt="Aleksa Pecelj"
-                                    className="w-full md:w-1/2 h-full object-cover object-top rounded-xl"
+                                    className="w-full h-full object-cover object-top"
                                 />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                <p className="absolute bottom-3 left-3 text-white font-semibold text-sm">Aleksa Pecelj</p>
+                            </div>
+                            <div className="relative flex-1 h-72 rounded-xl overflow-hidden">
                                 <img
                                     src={nikolaImg}
                                     alt="Nikola Pecelj"
-                                    className="w-full md:w-1/2 h-full object-cover object-top rounded-xl"
+                                    className="w-full h-full object-cover object-top"
                                 />
-                            </div>
-                            <div className="absolute bottom-0 left-0 p-4">
-                                <h3 className="text-lg font-bold text-zinc-100 mb-0.5">Aleksa i Nikola Pecelj</h3>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                <p className="absolute bottom-3 left-3 text-white font-semibold text-sm">Nikola Pecelj</p>
                             </div>
                         </div>
                         <p className="text-zinc-300 leading-relaxed text-[15px] mt-4">
@@ -154,14 +156,12 @@ export default function AboutSection() {
                             stručne pomoći se mogu svesti na par meseci, te tako i početnik relativno brzo počinje
                             da razume i više uživa u bilijaru.
                         </p>
-                        <div className="relative h-120 w-full flex justify-center">
-                            <div id="sons" className="w-full md:w-1/2 flex justify-center">
-                                <img
-                                    src={logoImg}
-                                    alt="Logo"
-                                    className="h-full object-contain rounded-xl"
-                                />
-                            </div>
+                        <div className="mt-6 flex justify-center">
+                            <img
+                                src={logoImg}
+                                alt="Škola bilijara Pecelj"
+                                className="max-h-40 w-auto object-contain opacity-90"
+                            />
                         </div>
                     </div>
                 </div>
