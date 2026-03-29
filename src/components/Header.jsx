@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#contact", label: "Kontakt" },
 ];
 
-export default function Header() {
+export default function Header({ onOpenBooking }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("#hero");
@@ -50,13 +50,9 @@ export default function Header() {
             : "bg-zinc-950/70 backdrop-blur-sm border-b border-transparent"
         }`}
       >
-        {/*
-          Mobile:  flex + justify-end  → hamburger snaps to the right corner
-          Desktop: grid-cols-3         → [empty] [centered nav] [empty]
-        */}
-        <div className="h-16 px-4 sm:px-6 flex items-center justify-end md:grid md:grid-cols-3 md:max-w-7xl md:mx-auto">
+        <div className="h-16 px-4 sm:px-6 flex items-center justify-between md:grid md:grid-cols-3 md:max-w-7xl md:mx-auto">
 
-          {/* LEFT — empty spacer (desktop only) */}
+          {/* LEFT — empty on mobile (hidden), spacer on desktop */}
           <div className="hidden md:block" />
 
           {/* CENTER — desktop nav */}
@@ -78,8 +74,17 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* RIGHT — hamburger (mobile) / empty (desktop) */}
-          <div className="flex items-center justify-end">
+          {/* RIGHT — CTA + hamburger */}
+          <div className="flex items-center justify-end gap-3">
+            {/* CTA button — visible on both mobile and desktop */}
+            <button
+              onClick={onOpenBooking}
+              className="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
+            >
+              Zakažite čas
+            </button>
+
+            {/* Hamburger — mobile only */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-zinc-300 hover:text-emerald-400 hover:bg-zinc-800/60 transition-all duration-200"
@@ -137,6 +142,14 @@ export default function Header() {
                 {label}
               </a>
             ))}
+
+            {/* CTA in drawer */}
+            <button
+              onClick={() => { setIsOpen(false); onOpenBooking(); }}
+              className="mt-3 mx-0 px-4 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors text-left"
+            >
+              Zakažite čas
+            </button>
           </nav>
 
           <div className="px-5 py-4 border-t border-zinc-800">
