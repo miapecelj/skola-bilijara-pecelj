@@ -1,5 +1,6 @@
 import { Trophy, Target, Brain, Shield, BarChart2, Layers, Users, Video } from "lucide-react";
 import aleksaImg from "../images/aleksa.jpeg";
+import djordjeImg from "../images/galerija.jpeg";
 
 /* ── Data ─────────────────────────────────────────────────── */
 
@@ -143,11 +144,20 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             {/* Đorđe Pecelj */}
-            <div className="bg-zinc-800/40 border border-zinc-800 rounded-2xl p-6 space-y-6">
-              <div>
-                <h3 className="text-lg font-bold text-zinc-100 mb-1">Đorđe Pecelj</h3>
-                <p className="text-emerald-400 text-sm font-medium">Osnivač · Trener · Selektor</p>
+            <div className="bg-zinc-800/40 border border-zinc-800 rounded-2xl overflow-hidden space-y-6">
+              <div className="relative h-56 w-full">
+                <img
+                  src={djordjeImg}
+                  alt="Đorđe Pecelj"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-4">
+                  <h3 className="text-lg font-bold text-zinc-100 mb-0.5">Đorđe Pecelj</h3>
+                  <p className="text-emerald-400 text-sm font-medium">Osnivač · Trener · Selektor</p>
+                </div>
               </div>
+              <div className="px-6 pb-6 space-y-6">
 
               <div>
                 <SectionTitle>Igrački uspesi</SectionTitle>
@@ -165,25 +175,29 @@ export default function AboutSection() {
                   ))}
                 </div>
               </div>
+              </div>
             </div>
 
             {/* Aleksa Pecelj */}
-            <div className="bg-zinc-800/40 border border-zinc-800 rounded-2xl p-6 space-y-6">
-              <div className="flex items-center gap-4">
+            <div className="bg-zinc-800/40 border border-zinc-800 rounded-2xl overflow-hidden space-y-6">
+              <div className="relative h-56 w-full">
                 <img
                   src={aleksaImg}
                   alt="Aleksa Pecelj"
-                  className="w-16 h-16 rounded-full object-cover border-2 border-emerald-500"
+                  className="w-full h-full object-cover object-top"
                 />
-                <div>
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-4">
                   <h3 className="text-lg font-bold text-zinc-100 mb-0.5">Aleksa Pecelj</h3>
                   <p className="text-emerald-400 text-sm font-medium">Evropski šampion · Trener</p>
                 </div>
               </div>
+              <div className="px-6 pb-6">
 
               <div>
                 <SectionTitle>Uspesi</SectionTitle>
                 <TrophyList items={aleksaTrophies} />
+              </div>
               </div>
             </div>
 

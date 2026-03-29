@@ -57,13 +57,13 @@ export default function Header() {
           <div className="hidden md:block" />
 
           {/* CENTER — desktop nav */}
-          <nav className="hidden md:flex items-center justify-center gap-8">
+          <nav className="hidden md:flex items-center justify-center gap-5">
             {navLinks.map(({ href, label }) => (
               <a
                 key={href}
                 href={href}
                 onClick={() => setActive(href)}
-                className={`relative text-sm font-medium tracking-wide py-1 transition-colors duration-200
+                className={`relative text-sm font-medium tracking-wide py-1 whitespace-nowrap transition-colors duration-200
                   after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-emerald-400 after:rounded-full after:transition-all after:duration-300
                   ${active === href
                     ? "text-emerald-400 after:w-full"
