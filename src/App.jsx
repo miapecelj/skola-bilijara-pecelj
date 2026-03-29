@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import PolazinciSection from "./components/PolazinciSection";
 import BookingSection from "./components/BookingSection";
 
 export default function App() {
@@ -34,6 +35,10 @@ export default function App() {
 
         <section id="about">
           <AboutSection />
+        </section>
+
+        <section id="polaznici" data-aos="fade-up">
+          <PolazinciSection />
         </section>
 
         <section id="booking" data-aos="fade-up">
