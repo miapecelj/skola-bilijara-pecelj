@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { X, MessageSquare, Play } from "lucide-react";
+const imageModules = import.meta.glob("../images/polaznici/*.{jpg,jpeg,png}", { eager: true });
+
 
 /* ── Student data ─────────────────────────────────────────── */
 const polaznici = [
@@ -102,10 +104,12 @@ const videos = [
 
 /* ── Avatar fallback ──────────────────────────────────────── */
 function Avatar({ id, name }) {
-  const [failed, setFailed] = useState(false);
   const initial = name.charAt(0).toUpperCase();
+  const src = imageModules[`../images/${id}.jpg`]?.default
+           ?? imageModules[`../images/${id}.jpeg`]?.default
+           ?? imageModules[`../images/${id}.png`]?.default;
 
-  if (failed) {
+  if (!src) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-4xl font-bold text-emerald-400 select-none">
         {initial}
@@ -113,14 +117,7 @@ function Avatar({ id, name }) {
     );
   }
 
-  return (
-    <img
-      src={`/polaznici/${id}.jpg`}
-      alt={name}
-      onError={() => setFailed(true)}
-      className="w-full h-full object-cover"
-    />
-  );
+  return <img src={src} alt={name} className="w-full h-full object-cover" />;
 }
 
 /* ── Student card ─────────────────────────────────────────── */
@@ -197,7 +194,7 @@ function TestimonialModal({ student, onClose }) {
 }
 
 /* ── Main section ─────────────────────────────────────────── */
-export default function PolazinciSection() {
+export default function StudentsSection() {
   const [selected, setSelected] = useState(null);
 
   return (
