@@ -105,9 +105,10 @@ const videos = [
 /* ── Avatar fallback ──────────────────────────────────────── */
 function Avatar({ id, name }) {
   const initial = name.charAt(0).toUpperCase();
-  const src = imageModules[`../images/${id}.jpg`]?.default
-           ?? imageModules[`../images/${id}.jpeg`]?.default
-           ?? imageModules[`../images/${id}.png`]?.default;
+  const src = imageModules[`../images/polaznici/${id}.jpg`]?.default
+           ?? imageModules[`../images/polaznici/${id}.jpeg`]?.default
+           ?? imageModules[`../images/polaznici/${id}.png`]?.default
+           ?? imageModules[`../images/polaznici/${id}.webp`]?.default;
 
   if (!src) {
     return (
