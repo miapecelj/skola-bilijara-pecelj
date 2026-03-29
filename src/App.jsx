@@ -7,48 +7,28 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import StudentsSection from "./components/StudentsSection";
 import BookingSection from "./components/BookingSection";
-import ContactSection from "./components/ContactSection";
+// import GallerySection from "./components/GallerySection";
+// import PricingSection from "./components/PricingSection";
 
 export default function App() {
   useEffect(() => {
-    AOS.init({
-      duration: 700,
-      easing: "ease-in-out",
-      once: false,
-      mirror: false,
-      offset: 80,
-      delay: 0,
-    });
-
-    const handleResize = () => setTimeout(() => AOS.refresh(), 200);
-    window.addEventListener("resize", handleResize);
+    AOS.init({ duration: 700, easing: "ease-in-out", once: false, mirror: false, offset: 80 });
+    const onResize = () => setTimeout(() => AOS.refresh(), 200);
+    window.addEventListener("resize", onResize);
     window.addEventListener("load", () => AOS.refresh());
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   return (
     <div className="min-h-screen bg-zinc-900 text-zinc-100 flex flex-col overflow-x-hidden scroll-smooth">
       <Header />
       <main>
-        <section id="hero">
-          <HeroSection />
-        </section>
-
-        <section id="about">
-          <AboutSection />
-        </section>
-
-        <section id="polaznici" data-aos="fade-up">
-          <StudentsSection />
-        </section>
-
-        <section id="booking" data-aos="fade-up">
-          <BookingSection />
-        </section>
-
-         <section id="booking" data-aos="fade-up">
-          <ContactSection />
-        </section>
+        <HeroSection />
+        <AboutSection />
+        <StudentsSection />
+        {/* <GallerySection /> */}
+        {/* <PricingSection /> */}
+        <BookingSection />
       </main>
     </div>
   );

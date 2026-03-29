@@ -52,8 +52,15 @@ export default function Header() {
       >
         <div className="h-16 px-4 sm:px-6 flex items-center justify-between md:grid md:grid-cols-3 md:max-w-7xl md:mx-auto">
 
-          {/* LEFT — spacer (desktop) */}
-          <div className="hidden md:block" />
+          {/* Mobile: CTA left | Desktop: empty spacer */}
+          <div>
+            <a
+              href="#booking"
+              className="md:hidden px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
+            >
+              Zakažite čas
+            </a>
+          </div>
 
           {/* CENTER — desktop nav */}
           <nav className="hidden md:flex items-center justify-center gap-5">
@@ -74,11 +81,11 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* RIGHT — CTA + hamburger */}
+          {/* RIGHT — hamburger (mobile) + CTA (desktop) */}
           <div className="flex items-center justify-end gap-3">
             <a
               href="#booking"
-              className="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
+              className="hidden md:inline-flex px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
             >
               Zakažite čas
             </a>
