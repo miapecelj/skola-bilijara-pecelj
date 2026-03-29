@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../images/logo.png";
 
 const navLinks = [
   { href: "#hero", label: "Početna" },
@@ -26,7 +25,6 @@ export default function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
-  // Highlight active section on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -52,44 +50,35 @@ export default function Header() {
             : "bg-zinc-950/70 backdrop-blur-sm border-b border-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 grid grid-cols-3 items-center">
+        {/*
+          Mobile:  flex + justify-end  → hamburger snaps to the right corner
+          Desktop: grid-cols-3         → [empty] [centered nav] [empty]
+        */}
+        <div className="h-16 px-4 sm:px-6 flex items-center justify-end md:grid md:grid-cols-3 md:max-w-7xl md:mx-auto">
 
-          {/* LEFT — Logo */}
-          <a
-            href="#hero"
-            onClick={() => { setIsOpen(false); setActive("#hero"); }}
-            className="flex items-center justify-start"
-            aria-label="Početna stranica"
-          >
-            <img
-              src={logo}
-              alt="Pecelj Billiard School"
-              className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(16,185,129,0.4)] hover:drop-shadow-[0_0_14px_rgba(16,185,129,0.7)] transition-all duration-300"
-            />
-          </a>
+          {/* LEFT — empty spacer (desktop only) */}
+          <div className="hidden md:block" />
 
-          {/* CENTER — Desktop nav */}
-          <nav className="hidden md:flex items-center justify-center gap-6">
+          {/* CENTER — desktop nav */}
+          <nav className="hidden md:flex items-center justify-center gap-8">
             {navLinks.map(({ href, label }) => (
               <a
                 key={href}
                 href={href}
                 onClick={() => setActive(href)}
-                className={`relative text-sm font-medium tracking-wide transition-colors duration-200 py-1
-                  ${active === href
-                    ? "text-emerald-400"
-                    : "text-zinc-300 hover:text-emerald-400"
-                  }
+                className={`relative text-sm font-medium tracking-wide py-1 transition-colors duration-200
                   after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-emerald-400 after:rounded-full after:transition-all after:duration-300
-                  ${active === href ? "after:w-full" : "after:w-0 hover:after:w-full"}
-                `}
+                  ${active === href
+                    ? "text-emerald-400 after:w-full"
+                    : "text-zinc-300 hover:text-emerald-400 after:w-0 hover:after:w-full"
+                  }`}
               >
                 {label}
               </a>
             ))}
           </nav>
 
-          {/* RIGHT — Mobile hamburger (desktop: empty) */}
+          {/* RIGHT — hamburger (mobile) / empty (desktop) */}
           <div className="flex items-center justify-end">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -109,25 +98,19 @@ export default function Header() {
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-black/70 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
 
-        {/* Slide-in panel */}
         <div
           className={`absolute top-0 right-0 h-full w-72 max-w-[85vw] bg-zinc-950 border-l border-zinc-800 flex flex-col shadow-2xl transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* Panel header */}
+          {/* Drawer header */}
           <div className="flex items-center justify-between px-5 h-16 border-b border-zinc-800">
-            <img
-              src={logo}
-              alt="Pecelj Billiard School"
-              className="h-9 w-auto object-contain"
-            />
+            <span className="text-zinc-200 font-semibold text-sm tracking-wide">Meni</span>
             <button
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center w-9 h-9 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 transition-all"
@@ -137,17 +120,17 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Nav links */}
+          {/* Links */}
           <nav className="flex flex-col px-3 py-4 gap-1 flex-grow">
             {navLinks.map(({ href, label }, i) => (
               <a
                 key={href}
                 href={href}
                 onClick={() => { setIsOpen(false); setActive(href); }}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200
+                className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border
                   ${active === href
-                    ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/25"
-                    : "text-zinc-300 hover:bg-zinc-800/60 hover:text-zinc-100 border border-transparent"
+                    ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/25"
+                    : "text-zinc-300 hover:bg-zinc-800/60 hover:text-zinc-100 border-transparent"
                   }`}
                 style={{ transitionDelay: isOpen ? `${i * 35}ms` : "0ms" }}
               >
@@ -156,11 +139,8 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Panel footer */}
           <div className="px-5 py-4 border-t border-zinc-800">
-            <p className="text-zinc-600 text-xs text-center">
-              © 2025 Pecelj Billiard School
-            </p>
+            <p className="text-zinc-600 text-xs text-center">© 2025 Pecelj Billiard School</p>
           </div>
         </div>
       </div>
