@@ -4,16 +4,21 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center"
-      style={{ backgroundImage: `url(${heroImage})` }}
+      className="relative w-full min-h-screen flex items-center justify-center"
+      style={{
+        backgroundImage: `url(${heroImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/60" />
 
-      <div className="relative z-10 text-center text-zinc-100 px-4 flex flex-col items-center gap-6">
-        <h1 className="text-4xl md:text-6xl font-bold text-emerald-400 drop-shadow-lg">
+      <div className="relative z-10 text-center px-6 flex flex-col items-center gap-5 py-24">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-emerald-400 drop-shadow-lg">
           Škola bilijara Pecelj
         </h1>
-        <p className="text-lg md:text-2xl text-zinc-200 max-w-2xl">
+        <p className="text-base sm:text-lg md:text-2xl text-zinc-200 max-w-2xl">
           Porodična tradicija. Strast. Preciznost. Ljubav prema bilijaru.
         </p>
         <a

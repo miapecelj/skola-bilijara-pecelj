@@ -199,16 +199,16 @@ function TestimonialModal({ student, onClose }) {
       <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
 
       <div
-        className="relative w-full max-w-lg bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-full max-w-2xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center gap-4 p-5 border-b border-zinc-800">
-          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0">
+        <div className="flex items-center gap-4 px-6 py-5 border-b border-zinc-800">
+          <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0">
             <Avatar file={student.file} id={student.id} name={student.name} />
           </div>
           <div>
-            <p className="text-zinc-100 font-bold">{student.name}</p>
+            <p className="text-zinc-100 font-bold text-lg">{student.name}</p>
             <p className="text-emerald-400 text-xs font-medium">Polaznik škole</p>
           </div>
           <button
@@ -220,9 +220,9 @@ function TestimonialModal({ student, onClose }) {
         </div>
 
         {/* Review text */}
-        <div className="p-5 max-h-[60vh] overflow-y-auto">
+        <div className="px-6 py-6 max-h-[65vh] overflow-y-auto">
           {student.review.split("\n\n").map((para, i) => (
-            <p key={i} className="text-zinc-300 text-sm leading-relaxed mb-3 last:mb-0">
+            <p key={i} className="text-zinc-300 text-[15px] leading-relaxed mb-3 last:mb-0">
               {para}
             </p>
           ))}

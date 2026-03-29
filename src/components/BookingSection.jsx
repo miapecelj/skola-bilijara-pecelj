@@ -39,17 +39,31 @@ const initialForm = {
   poruka: "",
 };
 
+const initialErrors = { ime: "", kontakt: "", termin: "" };
+
 export default function BookingSection() {
   const [form, setForm]       = useState(initialForm);
   const [termin, setTermin]   = useState(null);
   const [status, setStatus]   = useState("idle");
+  const [errors, setErrors]   = useState(initialErrors);
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (errors[e.target.name]) setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
+  };
+
+  const validate = () => {
+    const newErrors = { ime: "", kontakt: "", termin: "" };
+    if (!form.ime.trim())     newErrors.ime     = "Unesite ime i prezime.";
+    if (!form.kontakt.trim()) newErrors.kontakt = "Unesite email ili telefon.";
+    if (!termin)              newErrors.termin  = "Izaberite datum i vreme.";
+    setErrors(newErrors);
+    return !newErrors.ime && !newErrors.kontakt && !newErrors.termin;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validate()) return;
     setStatus("sending");
     try {
       await emailjs.send(
@@ -69,13 +83,14 @@ export default function BookingSection() {
       setStatus("success");
       setForm(initialForm);
       setTermin(null);
+      setErrors(initialErrors);
     } catch {
       setStatus("error");
     }
   };
 
-  const inputClass =
-    "w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-zinc-100 text-sm placeholder-zinc-500 focus:outline-none focus:border-emerald-500 transition-colors";
+  const inputClass = (hasError) =>
+    `w-full bg-zinc-800 border ${hasError ? "border-red-500" : "border-zinc-700"} rounded-lg px-4 py-3 text-zinc-100 text-sm placeholder-zinc-500 focus:outline-none focus:border-emerald-500 transition-colors`;
 
   const now = new Date();
 
@@ -106,26 +121,38 @@ export default function BookingSection() {
               {/* Row 1 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label className="block text-zinc-300 text-sm mb-1.5">Ime i prezime</label>
+                  <label className="block text-zinc-300 text-sm mb-1.5">
+                    Ime i prezime <span className="text-red-400">*</span>
+                  </label>
                   <input
                     type="text"
                     name="ime"
                     value={form.ime}
                     onChange={handleChange}
-                    required
-                    className={inputClass}
+                    className={inputClass(!!errors.ime)}
                   />
+                  {errors.ime && (
+                    <p className="flex items-center gap-1 text-red-400 text-xs mt-1">
+                      <AlertCircle size={12} />{errors.ime}
+                    </p>
+                  )}
                 </div>
                 <div>
-                  <label className="block text-zinc-300 text-sm mb-1.5">Email ili telefon</label>
+                  <label className="block text-zinc-300 text-sm mb-1.5">
+                    Email ili telefon <span className="text-red-400">*</span>
+                  </label>
                   <input
                     type="text"
                     name="kontakt"
                     value={form.kontakt}
                     onChange={handleChange}
-                    required
-                    className={inputClass}
+                    className={inputClass(!!errors.kontakt)}
                   />
+                  {errors.kontakt && (
+                    <p className="flex items-center gap-1 text-red-400 text-xs mt-1">
+                      <AlertCircle size={12} />{errors.kontakt}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -138,7 +165,7 @@ export default function BookingSection() {
                       name="nivo"
                       value={form.nivo}
                       onChange={handleChange}
-                      className={inputClass + " appearance-none pr-8"}
+                      className={inputClass(false) + " appearance-none pr-8"}
                     >
                       {nivoOptions.map((o) => (
                         <option key={o.value} value={o.value}>{o.label}</option>
@@ -154,7 +181,7 @@ export default function BookingSection() {
                       name="lokacija"
                       value={form.lokacija}
                       onChange={handleChange}
-                      className={inputClass + " appearance-none pr-8"}
+                      className={inputClass(false) + " appearance-none pr-8"}
                     >
                       {lokacijaOptions.map((o) => (
                         <option key={o.value} value={o.value}>{o.label}</option>
@@ -168,21 +195,26 @@ export default function BookingSection() {
               {/* Date & Time picker */}
               <div className="mb-4">
                 <label className="block text-zinc-300 text-sm mb-1.5">
-                  Željeni datum i sat 
+                  Željeni datum i sat <span className="text-red-400">*</span>
                 </label>
                 <DatePicker
                   selected={termin}
-                  onChange={(date) => setTermin(date)}
+                  onChange={(date) => { setTermin(date); if (errors.termin) setErrors((prev) => ({ ...prev, termin: "" })); }}
                   showTimeSelect
                   timeFormat="HH:mm"
                   timeIntervals={60}
                   dateFormat="dd.MM.yyyy HH:mm"
                   minDate={now}
                   placeholderText="Izaberite datum i vreme..."
-                  required
                   popperPlacement="bottom-start"
                   wrapperClassName="w-full"
+                  className={inputClass(!!errors.termin)}
                 />
+                {errors.termin && (
+                  <p className="flex items-center gap-1 text-red-400 text-xs mt-1">
+                    <AlertCircle size={12} />{errors.termin}
+                  </p>
+                )}
               </div>
 
               {/* Poruka */}
@@ -193,7 +225,7 @@ export default function BookingSection() {
                   value={form.poruka}
                   onChange={handleChange}
                   rows={4}
-                  className={inputClass + " resize-y"}
+                  className={inputClass(false) + " resize-y"}
                 />
               </div>
 
