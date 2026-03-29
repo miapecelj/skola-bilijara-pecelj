@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { Instagram, Facebook, CheckCircle, AlertCircle } from "lucide-react";
+import { format } from "date-fns";
 
 const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -33,13 +36,13 @@ const initialForm = {
   kontakt: "",
   nivo: "",
   lokacija: "",
-  termin: "",
   poruka: "",
 };
 
 export default function BookingSection() {
-  const [form, setForm]     = useState(initialForm);
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [form, setForm]       = useState(initialForm);
+  const [termin, setTermin]   = useState(null);
+  const [status, setStatus]   = useState("idle");
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -58,13 +61,14 @@ export default function BookingSection() {
           kontakt:   form.kontakt,
           nivo:      form.nivo,
           lokacija:  form.lokacija,
-          termin:    form.termin,
+          termin:    termin ? format(termin, "dd.MM.yyyy HH:mm") : "—",
           poruka:    form.poruka,
         },
         EMAILJS_PUBLIC_KEY
       );
       setStatus("success");
       setForm(initialForm);
+      setTermin(null);
     } catch {
       setStatus("error");
     }
@@ -72,6 +76,8 @@ export default function BookingSection() {
 
   const inputClass =
     "w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-zinc-100 text-sm placeholder-zinc-500 focus:outline-none focus:border-emerald-500 transition-colors";
+
+  const now = new Date();
 
   return (
     <section id="booking" className="bg-zinc-900 py-20 px-4">
@@ -96,6 +102,7 @@ export default function BookingSection() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
+
               {/* Row 1 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
@@ -158,19 +165,23 @@ export default function BookingSection() {
                 </div>
               </div>
 
-              {/* Termin */}
+              {/* Date & Time picker */}
               <div className="mb-4">
                 <label className="block text-zinc-300 text-sm mb-1.5">
-                  Poželjan termin <span className="text-red-400">*</span>
+                  Željeni datum i sat <span className="text-red-400">*</span>
                 </label>
-                <input
-                  type="text"
-                  name="termin"
-                  value={form.termin}
-                  onChange={handleChange}
+                <DatePicker
+                  selected={termin}
+                  onChange={(date) => setTermin(date)}
+                  showTimeSelect
+                  timeFormat="HH:mm"
+                  timeIntervals={60}
+                  dateFormat="dd.MM.yyyy HH:mm"
+                  minDate={now}
+                  placeholderText="Izaberite datum i vreme..."
                   required
-                  placeholder="e.g., Weekday evenings / Vikend popodne"
-                  className={inputClass}
+                  popperPlacement="bottom-start"
+                  wrapperClassName="w-full"
                 />
               </div>
 
