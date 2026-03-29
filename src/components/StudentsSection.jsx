@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { X, MessageSquare, Play } from "lucide-react";
-const imageModules = import.meta.glob("../images/polaznici/*.{jpg,jpeg,png}", { eager: true });
+const imageModules = import.meta.glob(
+  "../images/*.{jpg,jpeg,png,webp}",
+  { eager: true }
+);
 
 
 /* ── Student data ─────────────────────────────────────────── */
@@ -54,6 +57,7 @@ const polaznici = [
   },
   {
     id: "milijan",
+    file: "miljan",
     name: "Milijan",
     review:
       "Zahvaljujući Đorđu uspeo sam da svoju igru podignem na jedan viši nivo. Znanje koje poseduje uspeva da prenese veoma lako na učenika, tako da dajem sve preporuke za rad sa njim.",
@@ -78,6 +82,7 @@ const polaznici = [
   },
   {
     id: "novak",
+    file: "Novak foto",
     name: "Novak",
     review:
       "U Đorđu se spajaju dve osobine koje se vrlo retko sreću na jednom mestu: velika strast za igrom i izražene pedagoške sposobnosti. Te dve stvari omogućuju svim polaznicima ove škole da vrlo brzo usvoje znanje koje im on prenosi. Zato budite sigurni da će i vaša tehnika i vaša igra napredovati od prvog časa koji budete imali s njim.",
@@ -103,12 +108,12 @@ const videos = [
 ];
 
 /* ── Avatar fallback ──────────────────────────────────────── */
-function Avatar({ id, name }) {
+function Avatar({ file, id, name }) {
   const initial = name.charAt(0).toUpperCase();
-  const src = imageModules[`../images/polaznici/${id}.jpg`]?.default
-           ?? imageModules[`../images/polaznici/${id}.jpeg`]?.default
-           ?? imageModules[`../images/polaznici/${id}.png`]?.default
-           ?? imageModules[`../images/polaznici/${id}.webp`]?.default;
+  const base = file ?? id;
+  const src = ["jpg", "jpeg", "png", "webp"]
+    .map((ext) => imageModules[`../images/${base}.${ext}`]?.default)
+    .find(Boolean);
 
   if (!src) {
     return (
@@ -130,7 +135,7 @@ function StudentCard({ student, onClick }) {
       aria-label={`Pročitaj utisak — ${student.name}`}
     >
       {/* Photo / Avatar */}
-      <Avatar id={student.id} name={student.name} />
+      <Avatar file={student.file} id={student.id} name={student.name} />
 
       {/* Dark gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -167,7 +172,7 @@ function TestimonialModal({ student, onClose }) {
         {/* Header */}
         <div className="flex items-center gap-4 p-5 border-b border-zinc-800">
           <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0">
-            <Avatar id={student.id} name={student.name} />
+            <Avatar file={student.file} id={student.id} name={student.name} />
           </div>
           <div>
             <p className="text-zinc-100 font-bold">{student.name}</p>
