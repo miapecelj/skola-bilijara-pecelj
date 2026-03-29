@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import StudentsSection from "./components/StudentsSection";
 import BookingSection from "./components/BookingSection";
+import ContactSection from "./components/ContactSection";
 
 export default function App() {
   useEffect(() => {
@@ -43,6 +44,10 @@ export default function App() {
 
         <section id="booking" data-aos="fade-up">
           <BookingSection />
+        </section>
+
+         <section id="booking" data-aos="fade-up">
+          <ContactSection />
         </section>
       </main>
     </div>

@@ -16,15 +16,15 @@ export default function ContactSection() {
                         href="mailto:kontakt@skola-bilijara-pecelj.rs"
                         className="text-emerald-400 hover:text-emerald-300 transition"
                     >
-                        kontakt@skola-bilijara-pecelj.rs
+                        skolabilijarapecelj@gmail.com
                     </a>
                 </p>
-                <p>📞 +381 60 123 4567</p>
+                <p>📞 +381 69 2454 527</p>
             </div>
 
             <div className="flex justify-center gap-8 mt-6">
                 <a
-                    href="https://www.instagram.com/"
+                    href="https://www.instagram.com/skolabilijara_pecelj?igsh=MWpibnR2YTN4cHVvaA%3D%3D&utm_source=qr"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 text-zinc-400 hover:text-pink-400 transition"
@@ -40,7 +40,7 @@ export default function ContactSection() {
                     Instagram
                 </a>
                 <a
-                    href="https://www.facebook.com/"
+                    href="https://www.facebook.com/share/19wxFZGaoQ/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 text-zinc-400 hover:text-blue-400 transition"

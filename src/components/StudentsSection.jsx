@@ -8,7 +8,37 @@ const imageModules = import.meta.glob(
 
 /* ── Student data ─────────────────────────────────────────── */
 const polaznici = [
+    {
+    id: "dragan",
+    name: "Dragan",
+    review:
+      "Ogromno iskustvo za mene, dosao sam svestan da znam malo i naucio mnogo. Jedva cekam priliku da nastavimo tamo gde smo stali! 💪🏻",
+  },
+    {
+    id: "haris",
+    name: "Haris",
+    review:
+      "Đorđe Pecelj je jedan od najboljih poznavalaca bilijara koje znam. Svi smo mnogo naučili od njega i on je čovek koji je podigao bilijar na viši nivo u Srbiji.",
+  },
+    {
+    id: "sara",
+    name: "Sara",
+    review:
+      "Moja saradnja sa Đoletom je izvrsna! Treninzi su profesionalni, jasno strukturisani i prilagođeni mom nivou, uz odličnu atmosferu i puno strpljenja. Đole je izuzetan trener koji zna kako da prenese znanje i motiviše. Toplo bih preporučila njegove časove svakome ko želi da unapredi svoju igru, bez obzira na prethodno iskustvo.",
+  },
+    {
+    id: "jovan",
+    name: "Jovan",
+    review:
+      "Cast mi je sto radim sa najboljim trenerom, a i čovekom pre svega",
+  },
   {
+    id: "markol",
+    name: "Marko",
+    review:
+      "Jako mi odgovara nacin objasnjavanja tehnicke a i mentalne strane igre (sto je mozda i jos bitnije), rezultati su evidentni jer sam uspeo vec nakon manje vise desetak zajednickih casova da osvojim prvi turnir, a igram tek godinu dana.. Drugim recima, odlicno otkrivas tacno sta mi fali i brzo te stvari ispravljamo,pa cak i kad je nesto van plana i programa, na zahtev resavamo sta me muci.. 😊 Mislim da nema sanse da bih bio tu gde sam trenutno da nije bilo tebe 💪🏻 Mozda ono sto mi je i najbitnije je sto cak i kad zamrzim bilijar na momente,ponovo ga zavolim nakon casova, zbog pristupa i nacina objasnjavanja sve izgleda mnogo mnogo lakse 😊",
+  },
+    {
     id: "sajo",
     name: "Sajo",
     review:
@@ -104,7 +134,10 @@ const polaznici = [
 /* ── Video testimonials ───────────────────────────────────── */
 // Add YouTube video IDs here when available (the part after ?v= in the URL)
 const videos = [
-  // { id: "video1", title: "Utisak polaznika", youtubeId: "dQw4w9WgXcQ" },
+  { id: "video1", title: "Trening", youtubeId: "RDXLeP3DjBY" },
+  { id: "video2", title: "Nas polaznik", youtubeId: "T0bOfYgL2bc" },
+  { id: "video3", title: "Nas polaznik", youtubeId: "ECtBeR70-vw" },
+  { id: "video4", title: "Nas polaznik", youtubeId: "gK13x54PBA8" },
 ];
 
 /* ── Avatar fallback ──────────────────────────────────────── */
@@ -227,7 +260,7 @@ export default function StudentsSection() {
             <div className="mt-16">
               <h3 className="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2">
                 <span className="block w-1 h-5 bg-emerald-500 rounded-full" />
-                Video utisci
+                Snimci sa treninga
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {videos.map((v) => (

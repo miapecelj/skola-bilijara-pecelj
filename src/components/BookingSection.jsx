@@ -221,8 +221,8 @@ export default function BookingSection() {
             <p className="text-zinc-300 text-sm font-medium text-center mb-4">Pratite nas</p>
             <div className="flex items-center justify-center gap-4">
               {[
-                { href: "https://instagram.com", icon: <Instagram size={20} />, label: "Instagram" },
-                { href: "https://facebook.com",  icon: <Facebook size={20} />,  label: "Facebook"  },
+                { href: "https://www.instagram.com/skolabilijara_pecelj?igsh=MWpibnR2YTN4cHVvaA%3D%3D&utm_source=qr", icon: <Instagram size={20} />, label: "Instagram" },
+                { href: "https://www.facebook.com/share/19wxFZGaoQ/?mibextid=wwXIfr",  icon: <Facebook size={20} />,  label: "Facebook"  },
                 { href: "https://tiktok.com",    icon: <TikTokIcon size={20} />, label: "TikTok"   },
               ].map(({ href, icon, label }) => (
                 <a
