@@ -106,7 +106,7 @@ export default function AboutSection() {
                             ko želi da podeli znanja i iskustva koje je sticao tokom godina.
                         </p>
 
-                        <div className="mt-5 relative w-full h-[500px] rounded-xl overflow-hidden">
+                        <div className="mt-5 relative w-full h-[700px] rounded-xl overflow-hidden">
                             <img
                                 src={trenerImg}
                                 alt="Đorđe Pecelj - trener"
