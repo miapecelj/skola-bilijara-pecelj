@@ -8,7 +8,7 @@ export default function HeroSection() {
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundSize: "cover",
-        backgroundPosition: "center top",
+        backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
       }}
     >
