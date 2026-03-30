@@ -4,6 +4,7 @@ import aleksaImg1 from "../images/aleksa1.jpeg";
 import djordjeImg from "../images/galerija.jpeg";
 import nikolaImg from "../images/nikola.jpeg";
 import logoImg from "../images/logo.jpeg";
+import trenerImg from "../images/trener.jpeg";
 
 
 /* ── Data ─────────────────────────────────────────────────── */
@@ -100,11 +101,20 @@ export default function AboutSection() {
                             Škola je zasnovana na porodičnoj tradiciji i dugogodišnjem iskustvu u svetu bilijara.
                             Đorđe Pecelj, osnivač škole, je dugogodišnji selektor reprezentacije Srbije, sa kojom
                             je postigao dosta uspeha i vratio Srbiju na mapu Evrope i Sveta. Više od 3 decenije
-                            iskustva je aktivno prisutan u ovom sportu — u početku kao igrač, a kasnije i kao neko
+                            iskustva je aktivno prisutan u ovom sportu - u početku kao igrač, a kasnije i kao neko
                             ko želi da podeli znanja i iskustva koje je sticao tokom godina.
+                            <div className="relative flex-1 h-85 rounded-xl overflow-hidden">
+                                <img
+                                    src={trenerImg}
+                                    alt="Djordje Pecelj - trener"
+                                    className="w-full h-full object-cover object-top"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                                <p className="absolute bottom-3 left-3 text-white font-semibold text-sm">Djordje Pecelj</p>
+                            </div>
                         </p>
                         <p className="text-zinc-300 leading-relaxed text-[15px] mt-4">
-                            Bilijar je sastavni deo porodice Pecelj — sinovi Aleksa i Nikola su uz oca stekli
+                            Bilijar je sastavni deo porodice Pecelj - sinovi Aleksa i Nikola su uz oca stekli
                             ljubav prema bilijaru. Aleksa se već proslavio na svetskom nivou, dok Nikola kreće tim
                             putem i na nacionalnom i regionalnom nivou postiže zapažene rezultate. Upravo ta
                             kombinacija iskustva, strasti, savremenog pristupa i razumevanja ovog sporta iz
