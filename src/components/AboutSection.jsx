@@ -112,7 +112,7 @@ export default function AboutSection() {
                         </p>
 
                         <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                            <div className="relative flex-1 h-72 rounded-xl overflow-hidden">
+                            <div className="relative flex-1 h-85 rounded-xl overflow-hidden">
                                 <img
                                     src={aleksaImg1}
                                     alt="Aleksa Pecelj"
@@ -121,7 +121,7 @@ export default function AboutSection() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                                 <p className="absolute bottom-3 left-3 text-white font-semibold text-sm">Aleksa Pecelj</p>
                             </div>
-                            <div className="relative flex-1 h-72 rounded-xl overflow-hidden">
+                            <div className="relative flex-1 h-85 rounded-xl overflow-hidden">
                                 <img
                                     src={nikolaImg}
                                     alt="Nikola Pecelj"
