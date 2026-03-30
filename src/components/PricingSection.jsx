@@ -34,7 +34,7 @@ export default function PricingSection() {
 
   return (
     <section id="pricing" className="py-20 bg-zinc-950 border-t border-zinc-800">
-      <h2 className="text-4xl font-bold text-center text-emerald-400 mb-10">
+      <h2 className="text-4xl font-bold text-center text-green-400 mb-10">
         Planovi i cene
       </h2>
 
@@ -42,9 +42,9 @@ export default function PricingSection() {
         {plans.map((plan, index) => (
           <div
             key={index}
-            className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-lg hover:shadow-emerald-500/20 transition"
+            className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-lg hover:shadow-green-500/20 transition"
           >
-            <h3 className="text-2xl font-semibold text-emerald-400 mb-2">
+            <h3 className="text-2xl font-semibold text-green-400 mb-2">
               {plan.title}
             </h3>
             <p className="text-zinc-400 mb-4">{plan.description}</p>

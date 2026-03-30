@@ -1,12 +1,12 @@
 export default function ContactSection() {
     return (
         <section id="contact" className="py-20 bg-zinc-900 border-t border-zinc-800 text-center">
-            <h2 className="text-4xl font-bold text-emerald-400 mb-6">Kontakt</h2>
+            <h2 className="text-4xl font-bold text-green-400 mb-6">Kontakt</h2>
 
             <p className="max-w-2xl mx-auto text-zinc-400 mb-10 px-4">
                 Škola bilijara Pecelj stacionirana je u <span className="text-white">Beogradu</span>,
                 ali postoji mogućnost organizacije treninga i radionica i van Beograda.
-                Za sve informacije i dogovore, slobodno nas kontaktirajte direktno.
+                Za sve informacije o treninzima, cenama i dogovore, slobodno nas kontaktirajte direktno.
             </p>
 
             <div className="space-y-3 text-zinc-300 mb-8">
@@ -14,17 +14,17 @@ export default function ContactSection() {
                     📧{" "}
                     <a
                         href="mailto:kontakt@skola-bilijara-pecelj.rs"
-                        className="text-emerald-400 hover:text-emerald-300 transition"
+                        className="text-green-400 hover:text-green-300 transition"
                     >
-                        kontakt@skola-bilijara-pecelj.rs
+                        skolabilijarapecelj@gmail.com
                     </a>
                 </p>
-                <p>📞 +381 60 123 4567</p>
+                <p>📞 +381 69 2454 527</p>
             </div>
 
             <div className="flex justify-center gap-8 mt-6">
                 <a
-                    href="https://www.instagram.com/"
+                    href="https://www.instagram.com/skolabilijara_pecelj?igsh=MWpibnR2YTN4cHVvaA%3D%3D&utm_source=qr"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 text-zinc-400 hover:text-pink-400 transition"
@@ -40,7 +40,7 @@ export default function ContactSection() {
                     Instagram
                 </a>
                 <a
-                    href="https://www.facebook.com/"
+                    href="https://www.facebook.com/share/19wxFZGaoQ/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 text-zinc-400 hover:text-blue-400 transition"
