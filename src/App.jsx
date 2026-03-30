@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import StudentsSection from "./components/StudentsSection";
 import BookingSection from "./components/BookingSection";
+import ContactSection from "./components/ContactSection";
 // import GallerySection from "./components/GallerySection";
 // import PricingSection from "./components/PricingSection";
 
@@ -29,6 +30,7 @@ export default function App() {
         {/* <GallerySection /> */}
         {/* <PricingSection /> */}
         <BookingSection />
+        <ContactSection />
       </main>
     </div>
   );
