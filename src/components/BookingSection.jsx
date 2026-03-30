@@ -98,7 +98,7 @@ export default function BookingSection() {
     <section id="booking" className="bg-zinc-900 py-20 px-4">
       <div className="max-w-2xl mx-auto">
 
-        <h2 className="text-3xl md:text-4xl font-bold text-green-500 text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-green-400 text-center mb-10">
           Zakažite Čas
         </h2>
 

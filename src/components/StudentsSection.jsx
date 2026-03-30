@@ -239,7 +239,7 @@ export default function StudentsSection() {
       <section id="polaznici" className="bg-zinc-950 py-20 px-4 border-t border-zinc-800">
         <div className="max-w-5xl mx-auto">
 
-          <h2 className="text-3xl md:text-4xl font-bold text-green-500 text-center mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-green-400 text-center mb-3">
             Polaznici
           </h2>
           <p className="text-zinc-400 text-center text-sm mb-10">

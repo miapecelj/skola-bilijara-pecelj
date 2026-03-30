@@ -12,7 +12,7 @@ export default function HeroSection() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 text-center px-6 flex flex-col items-center gap-5 py-24">
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-green-400 drop-shadow-lg">
