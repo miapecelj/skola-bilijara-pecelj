@@ -89,16 +89,16 @@ function TrophyList({ items }) {
 export default function AboutSection() {
     return (
         <section id="about" className="bg-zinc-900 py-20 px-4 border-t border-zinc-800">
-            <div className="max-w-5xl mx-auto space-y-20">
+            <div className="max-w-5xl mx-auto space-y-16">
 
                 {/* ── O školi ─────────────────────────────────────── */}
                 <div data-aos="fade-up">
-                    <h2 className="text-3xl md:text-4xl font-bold text-green-500 text-center mb-10">
+                    <h2 className="text-3xl md:text-4xl font-bold text-green-400 text-center mb-10">
                         O školi
                     </h2>
                     <div className="bg-zinc-800/40 border border-zinc-800 rounded-2xl p-6 md:p-8">
 
-                        <p className="text-zinc-300 leading-relaxed text-[15px]">
+                        <p className="text-zinc-300 leading-relaxed text-base">
                             Škola je zasnovana na porodičnoj tradiciji i dugogodišnjem iskustvu u svetu bilijara.
                             Đorđe Pecelj, osnivač škole, je dugogodišnji selektor reprezentacije Srbije, sa kojom
                             je postigao dosta uspeha i vratio Srbiju na mapu Evrope i Sveta. Više od 3 decenije
@@ -116,7 +116,7 @@ export default function AboutSection() {
                             <p className="absolute bottom-3 left-3 text-white font-semibold text-sm">Đorđe Pecelj</p>
                         </div>
 
-                        <p className="text-zinc-300 leading-relaxed text-[15px] mt-5">
+                        <p className="text-zinc-300 leading-relaxed text-base mt-5">
                             Bilijar je sastavni deo porodice Pecelj - sinovi Aleksa i Nikola su uz oca stekli
                             ljubav prema bilijaru. Aleksa se već proslavio na svetskom nivou, dok Nikola kreće tim
                             putem i na nacionalnom i regionalnom nivou postiže zapažene rezultate. Upravo ta
@@ -144,7 +144,7 @@ export default function AboutSection() {
                                 <p className="absolute bottom-3 left-3 text-white font-semibold text-sm">Nikola Pecelj</p>
                             </div>
                         </div>
-                        <p className="text-zinc-300 leading-relaxed text-[15px] mt-4">
+                        <p className="text-zinc-300 leading-relaxed text-base mt-4">
                             U školi se uči pristup, odnos prema sportu, disciplina, osnove i tehnika, ali takođe
                             i filozofija igre, taktika, psihologija.
                         </p>
@@ -155,14 +155,14 @@ export default function AboutSection() {
                     <div className="relative bg-zinc-950 border border-green-900/50 rounded-2xl p-6 md:p-8 overflow-hidden">
                         {/* accent bar */}
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-green-500 rounded-l-2xl" />
-                        <h2 className="text-2xl md:text-3xl font-bold text-green-500 mb-5">Filozofija</h2>
-                        <p className="text-zinc-300 leading-relaxed text-[15px]">
+                        <h2 className="text-2xl md:text-3xl font-bold text-green-400 mb-5">Filozofija</h2>
+                        <p className="text-zinc-300 leading-relaxed text-base">
                             Pre svega, u školi se gaji ideja da je bilijar džentlmenski sport. Ozbiljno se
                             pristupa čoveku sa njegovim predispozicijama, kvalitetima, ali i ograničenjima. Na
                             osnovu toga je građen sistem koji obuhvata ne samo osnove i tehnike, već se dosta
                             obraća pažnja i na mentalni i psihološki pristup - metodološki, korak po korak.
                         </p>
-                        <p className="text-zinc-300 leading-relaxed text-[15px] mt-4">
+                        <p className="text-zinc-300 leading-relaxed text-base mt-4">
                             Insistira se na disciplini i radu, bez kojih nema velikih rezultata i uspeha. Svakako
                             da nismo okrenuti samo profesionalnom bavljenju bilijarom - znamo kako i početnicima
                             da približimo ovaj sport i pre svega da im "skratimo vreme". Godine igranja bez
@@ -181,7 +181,7 @@ export default function AboutSection() {
 
                 {/* ── Postignuća ──────────────────────────────────── */}
                 <div data-aos="fade-up">
-                    <h2 className="text-2xl md:text-3xl font-bold text-green-500 text-center mb-10">
+                    <h2 className="text-2xl md:text-3xl font-bold text-green-400 text-center mb-10">
                         Postignuća
                     </h2>
 
