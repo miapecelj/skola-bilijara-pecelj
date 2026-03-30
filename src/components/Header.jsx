@@ -6,7 +6,7 @@ const navLinks = [
   { href: "#about", label: "O nama" },
   { href: "#polaznici", label: "Polaznici" },
   { href: "#treninzi", label: "Treninzi" },
-  { href: "#booking", label: "Kontakt" },
+  { href: "#contact", label: "Kontakt" },
 ];
 
 export default function Header() {
