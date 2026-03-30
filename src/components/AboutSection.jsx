@@ -4,6 +4,7 @@ import aleksaImg1 from "../images/aleksa1.jpeg";
 import djordjeImg from "../images/galerija.jpeg";
 import nikolaImg from "../images/nikola.jpeg";
 import logoImg from "../images/logo.jpeg";
+import trenerImg from "../images/trener.jpeg";
 
 
 /* ── Data ─────────────────────────────────────────────────── */
@@ -18,30 +19,30 @@ const selectorResults = [
     {
         athlete: "Aleksa Pecelj",
         medals: [
-            "EP do 19 god — dve bronze i srebro",
-            "EP do 23 god — Evropski šampion",
+            "EP do 19 god - dve bronze i srebro",
+            "EP do 23 god - Evropski šampion",
         ],
     },
     {
         athlete: "Bojana Šarac",
-        medals: ["Evropsko juniorsko za devojčice — Srebro"],
+        medals: ["Evropsko juniorsko za devojčice - Srebro"],
     },
     {
         athlete: "Lazar Kostić",
-        medals: ["EP do 17 god — šampion", "EP do 19 god — srebro"],
+        medals: ["EP do 17 god - šampion", "EP do 19 god - srebro"],
     },
     {
         athlete: "Luka Bugarski",
-        medals: ["EP do 17 god — dve bronze", "EP do 19 god — bronza"],
+        medals: ["EP do 17 god - dve bronze", "EP do 19 god - bronza"],
     },
     {
         athlete: "Haris Trtovac",
-        medals: ["EP do 23 god — bronza"],
+        medals: ["EP do 23 god - bronza"],
     },
 ];
 
 const aleksaTrophies = [
-    "Višestruki državni šampion — juniorska i seniorska konkurencija",
+    "Višestruki državni šampion - juniorska i seniorska konkurencija",
     "Višestruki osvajač medalja sa Evropskih juniorskih šampionata",
     "Evropski šampion do 23 god.",
     "Više puta u završnicama najvećih svetskih turnira",
@@ -96,15 +97,27 @@ export default function AboutSection() {
                         O školi
                     </h2>
                     <div className="bg-zinc-800/40 border border-zinc-800 rounded-2xl p-6 md:p-8">
+
                         <p className="text-zinc-300 leading-relaxed text-[15px]">
                             Škola je zasnovana na porodičnoj tradiciji i dugogodišnjem iskustvu u svetu bilijara.
                             Đorđe Pecelj, osnivač škole, je dugogodišnji selektor reprezentacije Srbije, sa kojom
                             je postigao dosta uspeha i vratio Srbiju na mapu Evrope i Sveta. Više od 3 decenije
-                            iskustva je aktivno prisutan u ovom sportu — u početku kao igrač, a kasnije i kao neko
+                            iskustva je aktivno prisutan u ovom sportu - u početku kao igrač, a kasnije i kao neko
                             ko želi da podeli znanja i iskustva koje je sticao tokom godina.
                         </p>
-                        <p className="text-zinc-300 leading-relaxed text-[15px] mt-4">
-                            Bilijar je sastavni deo porodice Pecelj — sinovi Aleksa i Nikola su uz oca stekli
+
+                        <div className="mt-5 relative w-full h-[700px] rounded-xl overflow-hidden">
+                            <img
+                                src={trenerImg}
+                                alt="Đorđe Pecelj - trener"
+                                className="w-full h-full object-cover object-top"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                            <p className="absolute bottom-3 left-3 text-white font-semibold text-sm">Đorđe Pecelj</p>
+                        </div>
+
+                        <p className="text-zinc-300 leading-relaxed text-[15px] mt-5">
+                            Bilijar je sastavni deo porodice Pecelj - sinovi Aleksa i Nikola su uz oca stekli
                             ljubav prema bilijaru. Aleksa se već proslavio na svetskom nivou, dok Nikola kreće tim
                             putem i na nacionalnom i regionalnom nivou postiže zapažene rezultate. Upravo ta
                             kombinacija iskustva, strasti, savremenog pristupa i razumevanja ovog sporta iz
@@ -147,11 +160,11 @@ export default function AboutSection() {
                             Pre svega, u školi se gaji ideja da je bilijar džentlmenski sport. Ozbiljno se
                             pristupa čoveku sa njegovim predispozicijama, kvalitetima, ali i ograničenjima. Na
                             osnovu toga je građen sistem koji obuhvata ne samo osnove i tehnike, već se dosta
-                            obraća pažnja i na mentalni i psihološki pristup — metodološki, korak po korak.
+                            obraća pažnja i na mentalni i psihološki pristup - metodološki, korak po korak.
                         </p>
                         <p className="text-zinc-300 leading-relaxed text-[15px] mt-4">
                             Insistira se na disciplini i radu, bez kojih nema velikih rezultata i uspeha. Svakako
-                            da nismo okrenuti samo profesionalnom bavljenju bilijarom — znamo kako i početnicima
+                            da nismo okrenuti samo profesionalnom bavljenju bilijarom - znamo kako i početnicima
                             da približimo ovaj sport i pre svega da im "skratimo vreme". Godine igranja bez
                             stručne pomoći se mogu svesti na par meseci, te tako i početnik relativno brzo počinje
                             da razume i više uživa u bilijaru.
