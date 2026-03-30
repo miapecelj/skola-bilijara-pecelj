@@ -106,7 +106,7 @@ export default function AboutSection() {
                             ko želi da podeli znanja i iskustva koje je sticao tokom godina.
                         </p>
 
-                        <div className="mt-5 relative w-full h-96 rounded-xl overflow-hidden">
+                        <div className="mt-5 relative w-full h-[500px] rounded-xl overflow-hidden">
                             <img
                                 src={trenerImg}
                                 alt="Đorđe Pecelj - trener"
@@ -124,8 +124,8 @@ export default function AboutSection() {
                             različitih perspektiva čini osnov rada škole i odvaja je od drugih.
                         </p>
 
-                        <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                            <div className="relative flex-1 h-72 rounded-xl overflow-hidden">
+                        <div className="mt-6 flex flex-col gap-4">
+                            <div className="relative w-full h-[500px] rounded-xl overflow-hidden">
                                 <img
                                     src={aleksaImg1}
                                     alt="Aleksa Pecelj"
@@ -134,7 +134,7 @@ export default function AboutSection() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                                 <p className="absolute bottom-3 left-3 text-white font-semibold text-sm">Aleksa Pecelj</p>
                             </div>
-                            <div className="relative flex-1 h-72 rounded-xl overflow-hidden">
+                            <div className="relative w-full h-[500px] rounded-xl overflow-hidden">
                                 <img
                                     src={nikolaImg}
                                     alt="Nikola Pecelj"
