@@ -25,7 +25,7 @@ export default function GallerySection() {
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Naslov */}
-        <h2 className="text-4xl font-bold text-center text-emerald-400 mb-10">
+        <h2 className="text-4xl font-bold text-center text-green-400 mb-10">
           Galerija i treninzi
         </h2>
 
@@ -45,7 +45,7 @@ export default function GallerySection() {
               ".swiper-button-prev, .swiper-button-next"
             );
             arrows.forEach((arrow) => {
-              arrow.style.color = "#22c55e"; // emerald-500
+              arrow.style.color = "#22c55e"; // green-500
               arrow.style.transition = "all 0.3s ease";
             });
           }}
@@ -68,7 +68,7 @@ export default function GallerySection() {
           {videos.map((url, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-2xl border border-zinc-800 shadow-xl hover:shadow-emerald-400/20 transition-all duration-500"
+              className="overflow-hidden rounded-2xl border border-zinc-800 shadow-xl hover:shadow-green-400/20 transition-all duration-500"
             >
               <div className="aspect-[16/8] bg-black">
                 <iframe
