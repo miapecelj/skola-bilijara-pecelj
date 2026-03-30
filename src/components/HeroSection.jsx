@@ -7,7 +7,7 @@ export default function HeroSection() {
       className="relative w-full min-h-screen flex items-center justify-center"
       style={{
         backgroundImage: `url(${heroImage})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
       }}
