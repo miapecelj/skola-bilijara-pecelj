@@ -109,7 +109,7 @@ export default function AboutSection() {
                         <div className="mt-5 relative w-full h-[700px] rounded-xl overflow-hidden">
                             <img
                                 src={trenerImg}
-                                alt="Đorđe Pecelj - trener"
+                                alt="Đorđe Pecelj - trener bilijara Beograd"
                                 className="w-full h-full object-cover object-top"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -128,7 +128,7 @@ export default function AboutSection() {
                             <div className="relative flex-1 h-85 rounded-xl overflow-hidden">
                                 <img
                                     src={aleksaImg1}
-                                    alt="Aleksa Pecelj"
+                                    alt="Aleksa Pecelj - bilijar igrač"
                                     className="w-full h-full object-cover object-top"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -137,7 +137,7 @@ export default function AboutSection() {
                             <div className="relative flex-1 h-85 rounded-xl overflow-hidden">
                                 <img
                                     src={nikolaImg}
-                                    alt="Nikola Pecelj"
+                                    alt="Nikola Pecelj - bilijar igrač"
                                     className="w-full h-full object-cover object-top"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -145,8 +145,8 @@ export default function AboutSection() {
                             </div>
                             </div>
                             <p className="text-zinc-300 leading-relaxed text-base mt-4">
-                                U školi se uči pristup, odnos prema sportu, disciplina, osnove i tehnika, ali takođe
-                                i filozofija igre, taktika, psihologija.
+                                U školi se uči pristup, odnos prema sportu, disciplina, osnove i tehnika pool bilijara, ali takođe
+                                i filozofija igre, taktika, psihologija. Bilijar trening je prilagođen svakom polazniku — od bilijara za početnike do naprednih igrača.
                             </p>
                         </div>
                     </div>
@@ -192,7 +192,7 @@ export default function AboutSection() {
                                 <div className="relative h-56 w-full">
                                     <img
                                         src={djordjeImg}
-                                        alt="Đorđe Pecelj"
+                                        alt="Đorđe Pecelj - osnivač škole bilijara Beograd"
                                         className="w-full h-full object-cover object-top"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 to-transparent" />
@@ -227,7 +227,7 @@ export default function AboutSection() {
                                 <div className="relative h-56 w-full">
                                     <img
                                         src={aleksaImg}
-                                        alt="Aleksa Pecelj"
+                                        alt="Aleksa Pecelj - bilijar igrač"
                                         className="w-full h-full object-cover object-top"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 to-transparent" />
