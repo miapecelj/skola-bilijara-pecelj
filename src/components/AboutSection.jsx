@@ -249,7 +249,7 @@ export default function AboutSection() {
                     </div>
 
                     {/* ── Program rada ────────────────────────────────── */}
-                    <div id="program-rada" data-aos="fade-up">
+                    <div id="program-rada" data-aos="fade-up" className="scroll-mt-20">
                         <h2 className="text-2xl md:text-3xl font-bold text-green-400 text-center mb-10">
                             Program rada
                         </h2>
