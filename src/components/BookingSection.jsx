@@ -103,7 +103,7 @@ export default function BookingSection() {
           Zakažite Čas
         </h2>
         <p className="text-zinc-400 text-center text-base mb-10">
-          Zakaži individualni čas ili grupni trening bilijara u Beogradu. Časovi bilijara za sve nivoe — od početnika do naprednih igrača.
+          Zakaži individualni čas ili grupni trening bilijara u Beogradu. Časovi bilijara za sve nivoe - od početnika do naprednih igrača.
         </p>
 
         <div className="bg-zinc-900/80 rounded-2xl border border-zinc-800 p-6 md:p-8">

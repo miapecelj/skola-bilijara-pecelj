@@ -103,7 +103,6 @@ export default function AboutSection() {
                                 className="w-full h-full object-cover object-top"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                            <p className="absolute bottom-3 left-3 text-white font-semibold text-sm">Đorđe Pecelj</p>
                         </div>
 
                         <p className="text-zinc-300 leading-relaxed text-base mt-5">
