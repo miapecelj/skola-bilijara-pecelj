@@ -64,6 +64,7 @@ export default function BookingSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
+    if (document.activeElement) document.activeElement.blur();
     setStatus("sending");
     try {
       await emailjs.send(
@@ -90,7 +91,7 @@ export default function BookingSection() {
   };
 
   const inputClass = (hasError) =>
-    `w-full bg-zinc-800 border ${hasError ? "border-red-500" : "border-zinc-700"} rounded-lg px-4 py-3 text-zinc-100 text-sm placeholder-zinc-500 focus:outline-none focus:border-green-500 transition-colors`;
+    `w-full bg-zinc-800 border ${hasError ? "border-red-500" : "border-zinc-700"} rounded-lg px-4 py-3 text-zinc-100 text-base placeholder-zinc-500 focus:outline-none focus:border-green-500 transition-colors`;
 
   const now = new Date();
 
@@ -98,9 +99,12 @@ export default function BookingSection() {
     <section id="booking" className="bg-zinc-900 py-20 px-4">
       <div className="max-w-2xl mx-auto">
 
-        <h2 className="text-3xl md:text-4xl font-bold text-green-400 text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-green-400 text-center mb-3">
           Zakažite Čas
         </h2>
+        <p className="text-zinc-400 text-center text-base mb-10">
+          Zakaži individualni čas ili grupni trening bilijara u Beogradu. Časovi bilijara za sve nivoe - od početnika do naprednih igrača.
+        </p>
 
         <div className="bg-zinc-900/80 rounded-2xl border border-zinc-800 p-6 md:p-8">
           {status === "success" ? (
