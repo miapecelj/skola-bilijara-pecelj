@@ -20,7 +20,7 @@ function SectionTitle({ children }) {
     );
 }
 
-export default function ProgramRadaSection() {
+export default function ProgramSection() {
     return (
         <section id="program-rada" className="bg-zinc-900 py-20 px-4 border-t border-zinc-800 scroll-mt-20">
             <div className="max-w-5xl mx-auto" data-aos="fade-up">
