@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import ProgramRadaSection from "./components/ProgramRadaSection";
 import StudentsSection from "./components/StudentsSection";
 import BookingSection from "./components/BookingSection";
 import ContactSection from "./components/ContactSection";
@@ -26,6 +27,7 @@ export default function App() {
       <main>
         <HeroSection />
         <AboutSection />
+        <ProgramRadaSection />
         <StudentsSection />
         {/* <GallerySection /> */}
         {/* <PricingSection /> */}
