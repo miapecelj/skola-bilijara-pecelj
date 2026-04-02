@@ -6,6 +6,7 @@ const navLinks = [
   { href: "#about", label: "O nama" },
   { href: "#polaznici", label: "Polaznici" },
   { href: "#treninzi", label: "Treninzi" },
+  { href: "#program-rada", label: "Program rada" },
   { href: "#contact", label: "Kontakt" },
 ];
 

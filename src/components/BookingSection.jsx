@@ -64,6 +64,7 @@ export default function BookingSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
+    if (document.activeElement) document.activeElement.blur();
     setStatus("sending");
     try {
       await emailjs.send(
@@ -90,7 +91,7 @@ export default function BookingSection() {
   };
 
   const inputClass = (hasError) =>
-    `w-full bg-zinc-800 border ${hasError ? "border-red-500" : "border-zinc-700"} rounded-lg px-4 py-3 text-zinc-100 text-sm placeholder-zinc-500 focus:outline-none focus:border-green-500 transition-colors`;
+    `w-full bg-zinc-800 border ${hasError ? "border-red-500" : "border-zinc-700"} rounded-lg px-4 py-3 text-zinc-100 text-base placeholder-zinc-500 focus:outline-none focus:border-green-500 transition-colors`;
 
   const now = new Date();
 
