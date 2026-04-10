@@ -60,10 +60,10 @@ export default function Header() {
               <img
                 src={logoImg}
                 alt="Škola bilijara Pecelj"
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
-              <span className="text-zinc-100 font-semibold text-sm sm:text-base leading-tight whitespace-nowrap">
-                Škola bilijara<br />Pecelj
+              <span className="text-zinc-100 font-semibold text-base sm:text-lg whitespace-nowrap">
+                Škola bilijara Pecelj
               </span>
             </a>
           </div>
