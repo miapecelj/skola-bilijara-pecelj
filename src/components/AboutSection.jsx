@@ -3,7 +3,7 @@ import aleksaImg from "../images/aleksa.jpeg";
 import aleksaImg1 from "../images/aleksa1.jpeg";
 import djordjeImg from "../images/galerija.jpeg";
 import nikolaImg from "../images/nikola.jpeg";
-import logoImg from "../images/logo.jpeg";
+import logoImg from "../images/logo.png";
 import trenerImg from "../images/trener.jpeg";
 
 
