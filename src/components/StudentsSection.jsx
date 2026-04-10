@@ -132,10 +132,11 @@ const polaznici = [
 /* ── Video testimonials ───────────────────────────────────── */
 // Add YouTube video IDs here when available (the part after ?v= in the URL)
 const videos = [
-  { id: "video1", title: "Trening", youtubeId: "RDXLeP3DjBY" },
-  { id: "video2", title: "Nas polaznik", youtubeId: "T0bOfYgL2bc" },
-  { id: "video3", title: "Nas polaznik", youtubeId: "ECtBeR70-vw" },
-  { id: "video4", title: "Nas polaznik", youtubeId: "gK13x54PBA8" },
+  { id: "video1", title: "Trening", youtubeId: "mRGqFi_e2tk" },
+  { id: "video2", title: "Trening", youtubeId: "dJUBMJLg8Zc" },
+  { id: "video3", title: "Trening", youtubeId: "tTl05wf0MSA" },
+  { id: "video4", title: "Trening", youtubeId: "Pz3JFvtbPws" },
+  { id: "video5", title: "Trening", youtubeId: "EbW2qvH60lk" },
 ];
 
 /* ── Avatar fallback ──────────────────────────────────────── */
