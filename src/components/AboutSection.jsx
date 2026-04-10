@@ -21,6 +21,7 @@ const selectorResults = [
         medals: [
             "EP do 19 god - dve bronze i srebro",
             "EP do 23 god - Evropski šampion",
+            "EP seniori - Bronza"
         ],
     },
     {
@@ -29,7 +30,11 @@ const selectorResults = [
     },
     {
         athlete: "Lazar Kostić",
-        medals: ["EP do 17 god - šampion", "EP do 19 god - srebro"],
+        medals: [
+            "EP do 17 god - šampion", 
+            "EP do 19 god - srebro",
+            "EP do 23 god - Bronza"
+        ],
     },
     {
         athlete: "Luka Bugarski",
@@ -43,7 +48,7 @@ const selectorResults = [
 
 const aleksaTrophies = [
     "Višestruki državni šampion - juniorska i seniorska konkurencija",
-    "Višestruki osvajač medalja sa Evropskih juniorskih šampionata",
+    "Višestruki osvajač medalja sa Evropskih juniorskih i seniorskih šampionata",
     "Evropski šampion do 23 god.",
     "Više puta u završnicama najvećih svetskih turnira",
     "1/2 finale US Open-a",
