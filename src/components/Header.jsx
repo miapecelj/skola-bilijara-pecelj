@@ -54,14 +54,17 @@ export default function Header() {
       >
         <div className="h-16 px-4 sm:px-6 flex items-center justify-between md:grid md:grid-cols-3 md:max-w-7xl md:mx-auto">
 
-          {/* LEFT — logo */}
+          {/* LEFT — logo + name */}
           <div className="flex items-center">
-            <a href="#hero" onClick={() => setActive("#hero")}>
+            <a href="#hero" onClick={() => setActive("#hero")} className="flex items-center gap-2.5">
               <img
                 src={logoImg}
                 alt="Škola bilijara Pecelj"
-                className="h-10 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
+              <span className="text-zinc-100 font-semibold text-sm sm:text-base leading-tight whitespace-nowrap">
+                Škola bilijara<br />Pecelj
+              </span>
             </a>
           </div>
 
