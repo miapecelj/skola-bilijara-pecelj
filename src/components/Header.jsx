@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logoImg from "../images/logo.png";
 
 const navLinks = [
   { href: "#hero", label: "Početna" },
@@ -53,13 +54,17 @@ export default function Header() {
       >
         <div className="h-16 px-4 sm:px-6 flex items-center justify-between md:grid md:grid-cols-3 md:max-w-7xl md:mx-auto">
 
-          {/* Mobile: CTA left | Desktop: empty spacer */}
-          <div>
-            <a
-              href="#booking"
-              className="md:hidden px-4 py-2 rounded-lg bg-green-500 hover:bg-green-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
-            >
-              Zakažite čas
+          {/* LEFT — logo + name */}
+          <div className="flex items-center">
+            <a href="#hero" onClick={() => setActive("#hero")} className="flex items-center gap-2.5">
+              <img
+                src={logoImg}
+                alt="Škola bilijara Pecelj"
+                className="h-16 w-auto object-contain"
+              />
+              <span className="text-zinc-100 font-semibold text-base sm:text-lg whitespace-nowrap">
+                Škola bilijara Pecelj
+              </span>
             </a>
           </div>
 
