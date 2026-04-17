@@ -136,7 +136,12 @@ const videos = [
   { id: "video2", title: "Trening", youtubeId: "dJUBMJLg8Zc" },
   { id: "video3", title: "Trening", youtubeId: "tTl05wf0MSA" },
   { id: "video4", title: "Trening", youtubeId: "Pz3JFvtbPws" },
-  { id: "video5", title: "Trening", youtubeId: "EbW2qvH60lk" },
+  { id: "video6", title: "Trening", youtubeId: "EbW2qvH60lk" },
+  { id: "video7", title: "Trening", youtubeId: "wfvnNenS6no" },
+  { id: "video8", title: "Trening", youtubeId: "tekeBt3qoPY" },
+  { id: "video9", title: "Trening", youtubeId: "BqLJZzs5JF0" },
+  { id: "video10", title: "Trening", youtubeId: "WWlruiIFdrA" },
+  { id: "video11", title: "Trening", youtubeId: "jttGe7Fa5SE" },
 ];
 
 /* ── Avatar fallback ──────────────────────────────────────── */
