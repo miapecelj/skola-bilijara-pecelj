@@ -127,6 +127,12 @@ const polaznici = [
     review:
       "Đole je pravi profesionalac koji zna kako da motiviše i izvuče maksimum iz svakog igrača.",
   },
+  {
+    id: "bojan",
+    name: "Bojan",
+    review: 
+    "Moje iskustvo rada sa Đorđem ne može biti pozitivnije. Kada sam počeo treninge, nisam bio početnik, ali sam iza sebe imao godine igranja tokom kojih sam usvojio veliki broj pogrešnih navika vezanih za stav, položaj tela, hvat i samu mehaniku udarca. Iskreno, u jednom trenutku sam verovao da je gotovo nemoguće promeniti tako duboko ukorenjene osnove.\nDanas, kada smo praktično na kraju tog procesa ispravljanja temelja moje igre, ne mogu da verujem koliku smo transformaciju napravili. Ono što mi je na početku delovalo kao izuzetno težak i možda čak nedostižan zadatak, pokazalo se kao jedna od najboljih odluka koje sam doneo u vezi sa bilijarom. Sada sa ponosom mogu da kažem da sam prošao taj put i da u potpunosti razumem koliko je bilo važno vratiti se na same osnove i izgraditi ih na pravi način.\nĐorđe je pre svega vrhunski pedagog. Njegova sposobnost da prenese znanje na jednostavan i razumljiv način je impresivna, a metodologija rada odlično osmišljena. Tokom treninga vrlo brzo stičete utisak da radite sa nekim ko ne poznaje samo tehničku stranu bilijara, već i način na koji igrači razmišljaju, uče i napreduju. To je rezultat ogromnog iskustva koje poseduje, kako kao igrač, tako i kao trener.\nOno što posebno cenim jeste činjenica da se njegov rad ne svodi samo na mehaniku i tehniku. Podjednako pažnje posvećuje i psihološkim aspektima igre – mirnoći, fokusu na udarac koji je trenutno ispred vas, kontroli emocija, kao i razumevanju i „čitanju“ protivnika. Upravo taj spoj tehničkog i mentalnog pristupa daje kompletnu sliku onoga što je potrebno za ozbiljan napredak.\nDodatno, pomaže i to što Đoleta poznajem dugi niz godina. Na treninzima se oseća prisnost i iskrena želja da svoje znanje prenese dalje. To nije nešto što se može odglumiti – vidi se u svakoj njegovoj rečenici, u svakom objašnjenju i u vremenu koje je spreman da posveti učeniku kako bi bio siguran da je određena stvar zaista usvojena.\nNjegova fleksibilnost, posvećenost i ogromno znanje izdvajaju ga kao trenera i mentora. Zbog svega što sam do sada naučio, sa velikim zadovoljstvom nastavljam saradnju i radujem se svakom narednom treningu. Svakome ko želi da unapredi svoju igru, bez obzira na trenutni nivo, mogu iskreno i bez rezerve da preporučim rad sa Đorđem Peceljom."
+  }
 ];
 
 /* ── Video testimonials ───────────────────────────────────── */
