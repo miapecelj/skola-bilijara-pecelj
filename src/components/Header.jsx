@@ -11,7 +11,8 @@ const navLinks = [
   { href: "#contact", label: "Kontakt" },
 ];
 
-export default function Header() {
+// On subpages `base` is "/", so section links point back to the home page.
+export default function Header({ base = "" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("#hero");
@@ -36,12 +37,13 @@ export default function Header() {
       },
       { rootMargin: "-40% 0px -55% 0px" }
     );
+    if (base) return;
     navLinks.forEach(({ href }) => {
       const el = document.querySelector(href);
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [base]);
 
   return (
     <>
@@ -56,7 +58,7 @@ export default function Header() {
 
           {/* LEFT — logo + name */}
           <div className="flex items-center">
-            <a href="#hero" onClick={() => setActive("#hero")} className="flex items-center gap-2.5">
+            <a href={`${base}#hero`} onClick={() => setActive("#hero")} className="flex items-center gap-2.5">
               <img
                 src={logoImg}
                 alt="Škola bilijara Pecelj"
@@ -73,7 +75,7 @@ export default function Header() {
             {navLinks.map(({ href, label }) => (
               <a
                 key={href}
-                href={href}
+                href={`${base}${href}`}
                 onClick={() => setActive(href)}
                 className={`relative text-sm font-medium tracking-wide py-1 whitespace-nowrap transition-colors duration-200
                   after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-green-400 after:rounded-full after:transition-all after:duration-300
@@ -139,7 +141,7 @@ export default function Header() {
             {navLinks.map(({ href, label }, i) => (
               <a
                 key={href}
-                href={href}
+                href={`${base}${href}`}
                 onClick={() => { setIsOpen(false); setActive(href); }}
                 className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border
                   ${active === href
