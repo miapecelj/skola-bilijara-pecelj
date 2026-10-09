@@ -25,7 +25,7 @@ export default function HeroSection() {
           href="#booking"
           className="mt-2 px-8 py-3.5 rounded-xl bg-green-500 hover:bg-green-500 text-black font-bold text-base tracking-wide shadow-lg shadow-green-900/40 hover:shadow-green-900/60 transition-all duration-200 hover:-translate-y-0.5 inline-block"
         >
-          Zakažite čas
+          Zakaži čas
         </a>
       </div>
     </section>

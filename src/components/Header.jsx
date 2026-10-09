@@ -93,7 +93,7 @@ export default function Header() {
               href="#booking"
               className="hidden md:inline-flex px-4 py-2 rounded-lg bg-green-500 hover:bg-green-400 text-black font-semibold text-sm transition-colors whitespace-nowrap"
             >
-              Zakažite čas
+              Zakaži čas
             </a>
 
             <button
@@ -157,7 +157,7 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
               className="mt-3 px-4 py-3 rounded-xl bg-green-500 hover:bg-green-400 text-black font-semibold text-sm transition-colors text-center"
             >
-              Zakažite čas
+              Zakaži čas
             </a>
           </nav>
 
