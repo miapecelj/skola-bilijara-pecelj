@@ -1,10 +1,16 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+import { findRoute } from './routes'
 
-createRoot(document.getElementById('root')).render(
+const { Component } = findRoute(window.location.pathname)
+const app = (
   <StrictMode>
-    <App />
-  </StrictMode>,
+    <Component />
+  </StrictMode>
 )
+
+// Built pages arrive prerendered (scripts/prerender.mjs); the dev server serves an empty root.
+const root = document.getElementById('root')
+if (root.hasChildNodes()) hydrateRoot(root, app)
+else createRoot(root).render(app)

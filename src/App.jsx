@@ -9,6 +9,7 @@ import ProgramSection from "./components/ProgramSection";
 import StudentsSection from "./components/StudentsSection";
 import BookingSection from "./components/BookingSection";
 import ContactSection from "./components/ContactSection";
+import SiteFooter from "./components/SiteFooter";
 // import GallerySection from "./components/GallerySection";
 // import PricingSection from "./components/PricingSection";
 
@@ -34,6 +35,7 @@ export default function App() {
         <BookingSection />
         <ContactSection />
       </main>
+      <SiteFooter />
     </div>
   );
 }
